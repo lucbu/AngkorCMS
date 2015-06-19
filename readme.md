@@ -81,3 +81,9 @@ Then when the connection to database is operational you can install the tables a
 ```
 php artisan AngkorCMS:install
 ```
+
+##Administration
+The users infos to access back-end:
++ Login		: admin@angkorcms.com
++ Password	: password
++ URL		: /admin
