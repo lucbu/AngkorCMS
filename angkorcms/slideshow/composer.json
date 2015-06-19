@@ -1,0 +1,8 @@
+{
+    "name": "AngkorCMS/Slideshow",
+    "autoload": {
+        "psr-4": {
+            "AngkorCMS\\Slideshow\\": "src/"
+        }
+    }
+}

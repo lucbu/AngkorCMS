@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+
+class CreateAngkorcmsThemesTable extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up() {
+		Schema::create('angkorcms_themes', function (Blueprint $table) {
+			$table->increments('id');
+			$table->string('name');
+			$table->string('style');
+			$table->string('view');
+			$table->string('script');
+			$table->integer('template_id')->unsigned();
+			$table->foreign('template_id')->references('id')->on('angkorcms_templates')
+			->onDelete('cascade')
+			->onUpdate('cascade');
+		});
+	}
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down() {
+		Schema::drop('angkorcms_themes');
+	}
+}

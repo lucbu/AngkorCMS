@@ -1,0 +1,8 @@
+{
+    "name": "AngkorCMS/Content",
+    "autoload": {
+        "psr-4": {
+            "AngkorCMS\\Content\\": "src/"
+        }
+    }
+}

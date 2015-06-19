@@ -1,0 +1,8 @@
+{
+    "name": "AngkorCMS/Maps",
+    "autoload": {
+        "psr-4": {
+            "AngkorCMS\\Maps\\": "src/"
+        }
+    }
+}

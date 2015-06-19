@@ -1,0 +1,396 @@
+body{
+	margin-top:50px;
+	margin-bottom:50px;
+	color: #333;
+}
+
+.center{
+	text-align:center;
+}
+
+.rightalign{
+	text-align:right;
+	width:100%;
+}
+
+.leftalign{
+	text-align:left;
+	width:100%;
+}
+
+.blue{
+	background-color:rgb(62,74,120);
+	color:white;
+}
+
+.black{
+	color:black;
+}
+
+.white{
+	background-color:white;
+	color: #333;
+}
+
+.module{
+	margin-left: auto;
+	margin-right: auto;
+	max-width:1140px;
+	font-size: 110%;
+	padding-top:70px;
+	padding-bottom:70px;
+	font-family: "Montserrat",sans-serif,arial;
+}
+
+.news{
+	font-size: 100%;
+	padding-bottom:30px;
+	margin-bottom:20px;
+	font-family: "Montserrat",sans-serif,arial;
+	border-bottom: 1px solid rgb(221,221,221);
+}
+.news h3{
+	padding-bottom:20px;
+}
+
+.publish{
+	margin-top:5px;
+	margin-bottom:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	background-color:rgb(246,246,246);
+}
+
+.module h3{
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+	word-wrap: break-word;
+	padding-bottom:10px;
+	margin: 10px 0px 30px 0px;
+	font-size: 60px;
+	font-weight:bold;
+}
+
+.map{
+	height:530px;
+}
+
+.page h3{
+	font-size: 16px;
+	font-weight:bold;
+}
+.page{
+	margin-top:30px;
+	height:100%;
+	display:inline-block;
+	font-size: 85%;
+}
+
+.page .row{
+	max-width:100%;
+}
+
+.page table{
+    border-collapse: separate;
+	border-spacing: 10px 10px;
+	table-layout:fixed;
+    max-width: 1300px;
+}
+
+.page td{
+	max-width:800px;
+}
+
+.popups {
+	text-align: justify;
+}
+
+.customthumbnail{
+	height:320px;
+	cursor:pointer;
+}
+	
+.popups .popup2 {
+	display: inline-block;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.popups .popup1 {
+	min-height:190px;
+	text-align:center;
+	vertical-align:top;
+	padding:5px 5px 5px 5px;
+	float:auto;
+	display: inline-block;
+	margin-bottom:20px;
+	min-width:200px;
+}
+
+.blue .popups .popup1 {
+	border:1px solid white
+}
+
+.white .popups .popup1 {
+	border:1px solid #ddd;
+}
+
+.popup1 a:hover{
+	cursor:pointer;
+}
+.blue .popup1 a{
+	color:white;
+}
+.blue .popup1 .black a{
+	color:blue;
+}
+.blue .popup1 a:hover{
+	text-decoration:none
+}
+.white .popup1 a{
+	color:#333;
+}
+.white .popup1 a:hover{
+	text-decoration:none
+}
+
+.popups:after {
+	content: "";
+	width: 100%;
+	display: inline-block;
+}
+
+.popup2 img{
+	max-width: 100%;
+	position: relative;
+}
+
+.popup2 .col {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+
+.popup2 a:hover{
+	cursor:pointer;
+}
+
+.mycaption{
+	padding-top:5px;
+	padding-bottom:10px;
+	bottom:0px;
+	left:0%;
+	width:100%;
+	background-color: rgba(0, 0, 0, 0.5);	
+}
+.mycaption h3{
+	padding-top:0px;
+	padding-bottom:0px;
+}
+.containerprojects{
+	color:white;
+	text-align:center;
+	padding-top:50px;
+	background-color:rgb(62,74,120);
+	width:100%;
+}
+.projects{
+	margin-left: auto;
+	margin-right: auto;
+	width:80%;
+	font-size: 110%;
+	padding-top:50px;
+	padding-bottom:50px;
+	font-family: "Montserrat",sans-serif,arial;
+}
+
+.projects h3{
+	padding-bottom:10px;
+	font-size: 60px;
+	font-weight:bold;
+}
+
+.thumbnail > .caption{
+	vertical-align:middle;
+}
+
+.listtypeprojects{
+	margin-left: auto;
+	margin-right: auto;
+	padding-left:30px;
+	width:80%;
+	font-size: 110%;
+	padding-top:50px;
+	padding-bottom:10px;
+	font-family: "Montserrat",sans-serif,arial;
+}
+
+.listprojects{
+	margin-left: auto;
+	margin-right: auto;
+	display:inline-block;
+	width:80%;
+	font-size: 110%;
+	padding-top:10px;
+	padding-bottom:50px;
+	font-family: "Montserrat",sans-serif,arial;
+}
+
+.thumbnail > .thumbnailimage{
+	height:200px;
+	width:100%;
+    display: flex;
+}
+
+.thumbnail > .thumbnailimage > img{
+    margin: auto;
+	max-height:100%;
+	max-width:100%;
+}
+
+.projectpopup:hover{
+	cursor:pointer;
+}
+
+.carouselcustom{
+	margin-left: auto;
+	margin-right: auto;
+	height:100%;
+	display:block;
+}
+
+.carousel-control{
+	background: none !important;
+}
+
+.navcustom li{
+	margin-left:10px;
+	margin-right:10px;
+	border-bottom:2px solid rgb(153,153,153);
+}
+
+.mynavbartop > li:hover{
+	background-color:rgb(89,89,89)
+}
+
+.navcustom a{
+	color:white;
+}
+
+.navcustom > li.active, .navcustom > li.active:focus, .navcustom > li.active:hover{
+	border-color:rgb(128,168,15);
+}
+
+.navcustom > li.active > a, .navcustom > li.active > a:focus, .navcustom > li.active > a:hover {
+	color:rgb(128,168,15);
+	background-color: transparent;
+}
+
+.navcustom > li > a:focus, .navcustom > li > a:hover {
+	text-decoration: none;
+	color:rgb(128,168,15);
+	background-color: transparent;
+}
+
+.navcustom li:focus, .navcustom li:hover {
+	border-color:rgb(128,168,15);
+}
+
+.contactus{
+	display:block;
+	height:100%;
+	vertical-align:top;
+}
+
+.contactinfo{
+	float:left;
+	height:100%;
+	font-size:16px;
+	line-height: 2;
+	display:inline;
+	max-width:45%;
+	padding:5px 10px;
+	border-radius: 2%;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin-bottom:5px;
+}
+.contactform{
+	margin-right:5px;
+	float:right;
+	display:inline;
+	width:50%;
+	border-radius: 2%;
+}
+
+.footer{
+	color: #333;
+	height:100px;
+	padding-top:20px;
+	margin-bottom:50px;
+	vertical-align:bottom;
+	text-align:center;
+}
+
+.halfdiv{
+	float:left;
+	margin-left:10px;
+	margin-right:10px;
+	max-width:45%;
+}
+
+.st-social a{
+	display: inline-block;
+	height: 80px;
+	width: 80px;
+	margin: 0px 5px 10px;
+	text-indent: -9999em;
+	position: relative;
+	top: 0px;
+	background: url("../picture/icon-social.png") no-repeat scroll 0px 0px transparent;
+}
+
+.st-social a:hover{
+	top: 20px;
+}
+
+.scroll-top-wrapper {
+	position: fixed;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	text-align: center;
+	z-index: 99999999;
+	background-color: #777777;
+	color: #eeeeee;
+	width: 50px;
+	height: 48px;
+	line-height: 48px;
+	right: 30px;
+	bottom: 30px;
+	padding-top: 2px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.scroll-top-wrapper:hover {
+	background-color: #888888;
+}
+.scroll-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+	opacity: 1.0;
+}
+.scroll-top-wrapper i.fa {
+	line-height: inherit;
+}
+

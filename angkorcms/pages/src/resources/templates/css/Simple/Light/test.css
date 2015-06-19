@@ -1,0 +1,16 @@
+body{
+    background-color : #B8DBFF;
+    color:#252C33;
+}
+
+.modulebody{
+    margin-top:12px;
+}
+
+#footer{
+display:inline-block;
+    border-top: 1px double #A6C5E6;
+    background-color:#B8D1EB;
+    width:100%;
+    margin-top:10px;
+}

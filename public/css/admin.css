@@ -1,0 +1,14 @@
+.slider-size {
+height: 400px; /* This is your slider height */
+}
+
+.carousel {
+width:100%; 
+margin:0 auto; /* center your carousel if other than 100% */ 
+}
+
+.carousel-inner > .item > img,
+			.carousel-inner > .item > a > img {
+				width: 70%;
+				margin: auto;
+			}

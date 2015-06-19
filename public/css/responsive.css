@@ -1,0 +1,72 @@
+@media(max-width: 900px) {
+	.popup1 {
+		width:100% !important;
+    }
+	
+    .contactform {
+		margin-left:0px;
+		margin-right:0px;
+        float:left;
+		width:100%;
+		max-width:100%;
+    }
+	
+	.contactinfo {
+		margin-left:0px;
+		margin-right:0px;
+        float:left;
+		max-width:100%;
+		width:100%;
+    }
+	.popups{
+	
+		display:block;
+		text-align:center;
+		min-width:0%;
+		width:100%;
+		height:auto;
+		max-width:100% !important;
+	}
+	.popups:after {
+		display:block;
+		text-align:left;
+		min-width:0%;
+		width:100%;
+		height:auto;
+		max-width:100% !important;
+	}
+	
+	.popup2 {
+		display:block;
+		min-width:0%;
+		height:100% !important;
+		max-width:100% !important;
+    }
+	
+	.responsiveimg{
+		height:auto !important;
+		max-width:100%;
+	}
+	
+	.popup2 img{
+		max-height:100% !important;
+		width:100%;
+	}
+	
+	.btn{
+		max-width:100%;
+	}
+	
+    .module {
+		width:100%;
+    }
+	
+	.halfdiv{
+		float:none;
+		max-width:100% !important;
+	}
+	
+	table{
+		max-width:100%;
+	}
+}

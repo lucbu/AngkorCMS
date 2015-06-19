@@ -1,0 +1,8 @@
+{
+    "name": "AngkorCMS/Users",
+    "autoload": {
+        "psr-4": {
+            "AngkorCMS\\Users\\": "src/"
+        }
+    }
+}
