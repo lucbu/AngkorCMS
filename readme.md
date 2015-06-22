@@ -79,7 +79,7 @@ All the information needed to configure **AngkorCMS**.
 
 Then when the connection to database is operational you can install the tables and seed them by using this command:
 ```
-php artisan AngkorCMS:install
+php artisan angkorcms:install
 ```
 
 ##Administration
