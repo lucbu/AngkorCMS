@@ -12,8 +12,16 @@ class AngkorCMSPageRepository implements AngkorCMSPageRepositoryInterface {
 		return compact('pages');
 	}
 
+	public function allFull() {
+		$pages = AngkorCMSPage::with('theme', 'theme.template', 'theme.template.blocks', 'translations', 'translations.lang', 'translations.lang.image', 'translations.blocks', 'translations.blocks.modules', 'translations.blocks.block', 'translations.blocks.modules.module')
+			->orderBy('id', 'DESC')
+			->get();
+		return compact('pages');
+	}
+
 	public function getById($id) {
-		$page = AngkorCMSPage::with('theme', 'theme.template', 'theme.template.blocks', 'translations', 'translations.lang', 'translations.lang.image', 'translations.blocks', 'translations.blocks.modules', 'translations.blocks.block', 'translations.blocks.modules.module')->find($id);
+		$page = AngkorCMSPage::with('theme', 'theme.template', 'theme.template.blocks', 'translations', 'translations.lang', 'translations.lang.image', 'translations.blocks', 'translations.blocks.modules', 'translations.blocks.block', 'translations.blocks.modules.module')
+			->find($id);
 		return $page;
 	}
 

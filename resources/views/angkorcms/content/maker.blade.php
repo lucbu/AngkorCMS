@@ -1,5 +1,5 @@
 <h3> Editing the content : </h3>
-<div id="formAddSlide">
+<div id="formContent">
 	<small class="text-danger"><div id='formAddSlideError'></div></small>
 	{!! Form::open(array('url' => route("angkorcmscontent.updateContent", array($content->id)), 'method' => 'post', 'class' => 'form-horizontal panel', 'id' => 'updateContent')) !!}
 		Content :

@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use AngkorCMS\Pages\Repositories\Eloquent\AngkorCMSPageRepository;
 use App\Http\Controllers\Controller;
 
 class AdminController extends Controller {
@@ -9,7 +10,8 @@ class AdminController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function getIndex() {
-		return view('admin/index');
+	public function getIndex(AngkorCMSPageRepository $page_repository) {
+		$pages = $page_repository->allFull();
+		return view('admin/index', $pages);
 	}
 }

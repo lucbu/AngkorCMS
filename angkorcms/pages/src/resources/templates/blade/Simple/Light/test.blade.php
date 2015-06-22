@@ -22,15 +22,15 @@
 			</button>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    {!! AngkorBlade::display($blocks['navbar'], $parameters, false, array(), array('list-class' => 'nav navbar-nav', 'lang-class' => 'nav navbar-nav navbar-right')) !!}
+                    {!! AngkorBlade::display($blocks['navbar'], $parameters, [], array('list-class' => 'nav navbar-nav', 'lang-class' => 'nav navbar-nav navbar-right')) !!}
 		</div>
 	</div>
 </nav>
         <div class="col-sm-offset-1 col-sm-10">
-                {!! AngkorBlade::display($blocks['body'], $parameters, true, array('class'=>'modulebody'), array('slideshow-indicator' => false, "map-showMarkerName" => false, 'map-width' => '700px', 'map-height' => "300px", 'slideshow-interval' => 2000)) !!}
+                {!! AngkorBlade::display($blocks['body'], $parameters, [['class'=>'modulebody']], array('slideshow-indicator' => false, "map-showMarkerName" => false, 'map-width' => '700px', 'map-height' => "300px", 'slideshow-interval' => 2000)) !!}
         </div>
         <div id="footer">
-                {!! AngkorBlade::display($blocks['footer'], $parameters, false) !!}
+                {!! AngkorBlade::display($blocks['footer'], $parameters) !!}
         </div>
     </body>
 </html>

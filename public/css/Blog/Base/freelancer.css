@@ -36,7 +36,6 @@ h6 {
     font-weight: 700;
 }
 
-hr.star-light,
 hr.star-primary {
     margin: 25px auto 30px;
     padding: 0;
@@ -46,7 +45,6 @@ hr.star-primary {
     text-align: center;
 }
 
-hr.star-light:after,
 hr.star-primary:after {
     content: "\f005";
     display: inline-block;
@@ -57,11 +55,11 @@ hr.star-primary:after {
     font-size: 2em;
 }
 
-hr.star-light {
+section.success hr.star-primary {
     border-color: #fff;
 }
 
-hr.star-light:after {
+section.success hr.star-primary:after {
     color: #fff;
     background-color: #18bc9c;
 }
@@ -180,8 +178,8 @@ section h2 {
 }
 
 section.success {
-    color: rgb(44,62,80);
-    background: #fff;
+    color: #fff;
+    background: #18bc9c none repeat scroll 0 0;
 }
 
 section.success a,

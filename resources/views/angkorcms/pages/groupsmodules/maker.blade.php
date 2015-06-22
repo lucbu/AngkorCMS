@@ -13,7 +13,7 @@
 	<small class="text-danger"><div id='formAddModuleError'></div></small>
 	{!! Form::open(array('url' => route("angkorcmsgroupsmodules.addModule.ajax"), 'method' => 'post', 'class' => 'form-horizontal panel', 'id' => 'addModule')) !!}
 		{!! Form::hidden('groupmodule_id', $group_module->id) !!}
-		Module : (Be caution and don't create infinite loops)
+		Module : (Be cautious and don't create infinite loops)
 		<small class="text-danger text-danger-module_id"></small>
 		<div class="form-group form-group-module_id">
 			<select id="selectModule" name="module_id" class="form-control col-xs-2">

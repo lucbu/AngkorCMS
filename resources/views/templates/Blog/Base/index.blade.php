@@ -15,7 +15,7 @@
     <script type="text/javascript" src="{{ asset('js/Blog/Base/classie.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/Blog/Base/cbpAnimatedHeader.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/Blog/Base/freelancer.js') }}"></script>
-	<title>{{$title}}</title>
+	<title>AngkorCMS - {{$title}}</title>
 
 </head>
 
@@ -37,7 +37,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				{!! AngkorBlade::display($blocks['navbar'], $parameters, false, array(), array('list-class' => 'nav navbar-nav navbar-right', 'list-item-class' => 'page-scroll')) !!}
+				{!! AngkorBlade::display($blocks['navbar'], $parameters, array(), array('list-class' => 'nav navbar-nav navbar-right', 'list-item-class' => 'page-scroll', 'lang-class' => 'nav navbar-nav navbar-right',)) !!}
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -46,17 +46,15 @@
 
     <!-- Header -->
     <header>
-		{!! AngkorBlade::display($blocks['header'], $parameters, false) !!}
+		{!! AngkorBlade::display($blocks['header'], $parameters) !!}
     </header>
 
     <!-- About Section -->
-    <section class="success" id="about">
-		{!! AngkorBlade::display($blocks['about'], $parameters, false) !!}
-    </section>
+		{!! AngkorBlade::display($blocks['body'], $parameters, [["type" => "section", "class"=>["", "success"]], ["type" => "div", "class"=>"container"]]) !!}
 
     <!-- Footer -->
     <footer class="text-center">
-		{!! AngkorBlade::display($blocks['footer'], $parameters, false) !!}
+		{!! AngkorBlade::display($blocks['footer'], $parameters, [["type" => "div", "class"=>["footer-above", "footer-below", "stop" => true]], ["type" => "div", "class"=>"container"], ["type" => "div", "class"=>"row"]]) !!}
     </footer>
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->

@@ -30,3 +30,7 @@ $RECYCLE.BIN/
 
 ## Composer ##
 /vendor/
+
+### SublimeText ###
+/.phpintel/
+config/angkorcmspages.php
