@@ -14,7 +14,6 @@
 		<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
 		<!-- Scripts -->
-		<script type="text/javascript" src="{{ asset('/tinymce/tinymce.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('/js/jquery-2.1.3.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('/js/bootstrap.min.js') }}"></script>
 

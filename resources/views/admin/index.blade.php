@@ -11,6 +11,9 @@
 				<div class="panel-body">
 					@foreach($pages as $page)
 						{{ $page->name }}
+						(Theme :
+						{!! link_to_route('angkorcmstemplates.edit', $page->theme->template->name, array($page->theme->template->id)) !!} /
+						{!! link_to_route('angkorcmstemplates.angkorcmsthemes.edit', $page->theme->name, array($page->theme->template->id, $page->theme->id)) !!})
 						<ul style="padding-left:5em">
 						@foreach($page->translations as $trans)
 							 <li>/{{ $trans->slug }} ({{ $trans->lang->code }})
@@ -37,6 +40,13 @@
 						</ul>
 					@endforeach
 				</ul>
+				<p>Infos :
+					<ul>
+						<li>DEBUG 		: {{ env('APP_DEBUG') }}</li>
+						<li>HOST 		: {{ env('DB_HOST') }}</li>
+						<li>DATABASE 	: {{ env('DB_DATABASE') }}</li>
+					</ul>
+				</p>
 			</div>
 		</div>
 	</div>

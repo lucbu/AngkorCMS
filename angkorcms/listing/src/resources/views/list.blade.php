@@ -6,9 +6,9 @@
 		@foreach($listing->items as $item)
 			<li class='@if(isset($attr['list-item-class'])){{$attr['list-item-class']}} @endif'>
 				@if($item->url != '')
-					<a href="{{ url($item->url) }}">{{$item->text}}</a>
+					<a href="{{ url($item->url) }}">{!! $item->text !!}</a>
 				@else
-					{{$item->text}}
+					{!! $item->text !!}
 				@endif
 			</li>
 		@endforeach

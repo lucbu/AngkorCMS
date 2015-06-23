@@ -7,14 +7,14 @@ use Input;
 class AngkorCMSPageRepository implements AngkorCMSPageRepositoryInterface {
 
 	public function all() {
-		$pages = AngkorCMSPage::orderBy('id', 'DESC')
+		$pages = AngkorCMSPage::orderBy('name', 'DESC')
 			->get();
 		return compact('pages');
 	}
 
 	public function allFull() {
 		$pages = AngkorCMSPage::with('theme', 'theme.template', 'theme.template.blocks', 'translations', 'translations.lang', 'translations.lang.image', 'translations.blocks', 'translations.blocks.modules', 'translations.blocks.block', 'translations.blocks.modules.module')
-			->orderBy('id', 'DESC')
+			->orderBy('name', 'ASC')
 			->get();
 		return compact('pages');
 	}
