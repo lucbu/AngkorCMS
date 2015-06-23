@@ -27,6 +27,6 @@ Route::group(['middleware' => ['angkorcmslanguage']], function () {
 	Route::group(['prefix' => $prefix], function () {
 		Route::get('/{slug}', 'FrontController@index');
 		Route::get('/{slug}/{parameters}', 'FrontController@indexWithParameters')->where('parameters', '(.*)');
-		Route::get('/', 'FrontController@byDefault');
+		Route::get('/', ['uses' => 'FrontController@byDefault', 'as' => 'home']);
 	});
 });

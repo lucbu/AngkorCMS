@@ -94,15 +94,12 @@ class AngkorCMSBladeBuilder {
 	public function createView($attributes, $module, $data, $unique_id) {
 
 		$html = "\n";
-		if ($module->title != '') {
-			$html .= "<span id='" . $module->title . "'>\n";
-		}
 
 		if (count($attributes) > 0 && $this->nature_div[$module->nature]) {
 			$this->moduleNumber++;
 			foreach ($attributes as $attr) {
 				if (is_array($attr)) {
-					$stringAttr = $this->attributesFromArray($attr);
+					$stringAttr = $this->attributesFromArray($attr, $module);
 					$tag = "div";
 					if (isset($attr["type"])) {
 						$tag = $attr["type"];
@@ -125,25 +122,27 @@ class AngkorCMSBladeBuilder {
 				}
 			}
 		}
-		if ($module->title != '') {
-			$html .= "</span>\n";
-		}
 
 		return $html;
 	}
 
-	protected function attributesFromArray($attributes) {
+	protected function attributesFromArray($attributes, $module) {
 		$stringAttr = '';
 		foreach ($attributes as $key => $value) {
 			if ($key != "type") {
 				$theValue = $value;
 				if (is_array($value)) {
 					$nbValue = count($value);
-					if(isset($value["stop"])){$nbValue--;}
+					if (isset($value["stop"])) {$nbValue--;}
 					if (isset($value["stop"]) && $value["stop"] == true && $this->moduleNumber > $nbValue) {
 						$theValue = $value[$nbValue - 1];
 					} else {
 						$theValue = $value[($this->moduleNumber - 1) % $nbValue];
+					}
+				}
+				if ($key == "id") {
+					if ($value === true) {
+						$theValue = $module->title;
 					}
 				}
 				$stringAttr .= $key . "='" . $theValue . "' ";

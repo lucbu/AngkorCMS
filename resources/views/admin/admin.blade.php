@@ -37,14 +37,9 @@
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="{{ url('/') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-						<li><a href="{{ route('admin.index') }}"><span class="glyphicon glyphicon-cog"></span> Admin Panel</a></li>
-						<li><a href="{{ route('angkorcms.medias') }}"><span class="glyphicon glyphicon-picture"></span> Medias</a></li>
-						<li><a href="{{ route('angkorcmslang.index') }}"><span class="glyphicon glyphicon-globe"></span> Languages</a></li>
-						<li><a href="{{ route('angkorcmstemplates.index') }}"><span class="glyphicon glyphicon-object-align-top"></span> Templates</a></li>
-						<li><a href="{{ route('angkorcmspages.index') }}"><span class="glyphicon glyphicon-list-alt"></span> Pages</a></li>
-						<li><a href="{{ route('angkorcmsmodules.index') }}"><span class="glyphicon glyphicon-inbox"></span> Modules</a></li>
-						<li><a href="{{ route('angkorcmsusers.index') }}"><span class="glyphicon glyphicon-user"></span> Users</a></li>
+						@foreach(Config::get('menu-admin') as $key => $value)
+							<li><a href="{{ route($value['route']) }}"><span class="{{$value['spanClass']}}"></span> {{ $key }}</a></li>
+						@endforeach
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">

@@ -37,7 +37,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				{!! AngkorBlade::display($blocks['navbar'], $parameters, array(), array('list-class' => 'nav navbar-nav navbar-right', 'list-item-class' => 'page-scroll', 'lang-class' => 'nav navbar-nav navbar-right',)) !!}
+				{!! AngkorBlade::display($blocks['navbar'], $parameters, [], ['list-class' => 'nav navbar-nav navbar-right', 'list-item-class' => 'page-scroll', 'list-item-add' => '<li class="hidden"><a href="#page-top"></a></li>']) !!}
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -46,11 +46,11 @@
 
     <!-- Header -->
     <header>
-		{!! AngkorBlade::display($blocks['header'], $parameters) !!}
+		{!! AngkorBlade::display($blocks['header'], $parameters, [["type" => "header"],["type" => "div", "class" => "container"],["type" => "div", "class" => "row"],["type" => "div", "class" => "col-lg-12"]]) !!}
     </header>
 
     <!-- About Section -->
-		{!! AngkorBlade::display($blocks['body'], $parameters, [["type" => "section", "class"=>["", "success"]], ["type" => "div", "class"=>"container"]]) !!}
+		{!! AngkorBlade::display($blocks['body'], $parameters, [["type" => "section", "id"=>true, "class"=>["", "success"]], ["type" => "div", "class"=>"container"]]) !!}
 
     <!-- Footer -->
     <footer class="text-center">
