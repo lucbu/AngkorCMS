@@ -7,9 +7,5 @@ return array(
 			'index' => 'index',
 			'users' => 'users',
 		],
-		'fr' => [
-			'index' => 'accueil',
-			'users' => 'utilisateur',
-		],
 	],
 );
