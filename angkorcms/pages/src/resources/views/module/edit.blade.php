@@ -18,7 +18,7 @@
 				<div class="form-group {{ $errors->has('name') ? 'has-error has-feedback' : '' }}">
 					{!! Form::text('name', $module->name, array('class' => 'form-control', 'placeholder' => 'Name')) !!}
 				</div>
-				Title :
+				Title (Would be use as anchor):
 				<small class="text-danger">{{ $errors->first('title') }}</small>
 				<div class="form-group {{ $errors->has('title') ? 'has-error has-feedback' : '' }}">
 					{!! Form::text('title', $module->title, array('class' => 'form-control', 'placeholder' => 'Title')) !!}

@@ -11,7 +11,7 @@ class AngkorCMSModuleRequest extends Request {
 	public function rules() {
 		return [
 			'name' => 'required',
-			'title' => '',
+			'title' => 'alpha',
 			'lang_id' => 'required|exists:angkorcms_langs,id',
 		];
 	}

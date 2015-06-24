@@ -10,7 +10,7 @@
 
 				<div class="panel-body">
 					@foreach($pages as $page)
-						{{ $page->name }}
+						{!! link_to_route('angkorcmspages.edit', $page->name, array($page->id)) !!}
 						(Theme :
 						{!! link_to_route('angkorcmstemplates.edit', $page->theme->template->name, array($page->theme->template->id)) !!} /
 						{!! link_to_route('angkorcmstemplates.angkorcmsthemes.edit', $page->theme->name, array($page->theme->template->id, $page->theme->id)) !!})
