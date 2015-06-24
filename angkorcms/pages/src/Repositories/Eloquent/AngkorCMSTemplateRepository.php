@@ -2,6 +2,7 @@
 
 use AngkorCMS\Pages\AngkorCMSTemplate;
 use AngkorCMS\Pages\Repositories\Contracts\AngkorCMSTemplateRepositoryInterface;
+use File;
 use Input;
 
 class AngkorCMSTemplateRepository implements AngkorCMSTemplateRepositoryInterface {
@@ -40,6 +41,13 @@ class AngkorCMSTemplateRepository implements AngkorCMSTemplateRepositoryInterfac
 		if ($template == null) {
 			return false;
 		}
+		$pathCss = "css\\" . $template->name;
+		$pathJs = "js\\" . $template->name;
+		$pathView = "..\\resources\\views\\templates\\" . $template->name;
+		File::deleteDirectory($pathCss);
+		File::deleteDirectory($pathJs);
+		File::deleteDirectory($pathView);
+
 		$template->delete();
 		return true;
 	}

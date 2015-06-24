@@ -2,6 +2,7 @@
 
 use AngkorCMS\Pages\AngkorCMSTheme;
 use AngkorCMS\Pages\Repositories\Contracts\AngkorCMSThemeRepositoryInterface;
+use File;
 use Input;
 
 class AngkorCMSThemeRepository implements AngkorCMSThemeRepositoryInterface {
@@ -102,10 +103,17 @@ class AngkorCMSThemeRepository implements AngkorCMSThemeRepositoryInterface {
 	}
 
 	public function destroy($id) {
-		$theme = AngkorCMSTheme::find($id);
+		$theme = AngkorCMSTheme::with('template')->find($id);
 		if ($theme == null) {
 			return false;
 		}
+		$pathCss = "css\\" . $theme->template->name . "\\" . $theme->name;
+		$pathJs = "js\\" . $theme->template->name . "\\" . $theme->name;
+		$pathView = "..\\resources\\views\\templates\\" . $theme->template->name . "\\" . $theme->name;
+		File::deleteDirectory($pathCss);
+		File::deleteDirectory($pathJs);
+		File::deleteDirectory($pathView);
+
 		$theme->delete();
 		return true;
 	}

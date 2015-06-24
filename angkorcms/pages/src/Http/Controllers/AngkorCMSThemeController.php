@@ -72,7 +72,7 @@ class AngkorCMSThemeController extends AngkorCMSPageBaseController {
 		if (!$this->repository->destroy($id)) {
 			return Redirect::route('angkorcmstemplates.index')->with('error', 'The page doesn\'t exist.');
 		}
-		return Redirect::route('angkorcmstemplates.angkorcmsthemes.index', $template_id)
-			->with('info', 'The page has been deleted.');
+		return Redirect::route('angkorcmstemplates.edit', $template_id)
+			->with('info', 'The theme has been deleted.');
 	}
 }

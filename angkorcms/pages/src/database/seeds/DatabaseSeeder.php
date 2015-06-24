@@ -28,6 +28,9 @@ class TemplateTableSeeder extends Seeder {
 		DB::table('angkorcms_templates')->insert(array(
 			'name' => 'Simple',
 		));
+		DB::table('angkorcms_templates')->insert(array(
+			'name' => 'Blog',
+		));
 	}
 }
 
@@ -40,6 +43,13 @@ class ThemeTableSeeder extends Seeder {
 			'view' => 'test.blade.php',
 			'script' => 'script.js',
 			'template_id' => 1,
+		));
+		DB::table('angkorcms_themes')->insert(array(
+			'name' => 'Base',
+			'style' => 'freelancer.css',
+			'view' => 'index.blade.php',
+			'script' => 'freelancer.js',
+			'template_id' => 2,
 		));
 	}
 }
@@ -58,6 +68,22 @@ class BlockTableSeeder extends Seeder {
 		DB::table('angkorcms_blocks')->insert(array(
 			'name' => 'navbar',
 			'template_id' => 1,
+		));
+		DB::table('angkorcms_blocks')->insert(array(
+			'name' => 'navbar',
+			'template_id' => 2,
+		));
+		DB::table('angkorcms_blocks')->insert(array(
+			'name' => 'header',
+			'template_id' => 2,
+		));
+		DB::table('angkorcms_blocks')->insert(array(
+			'name' => 'footer',
+			'template_id' => 2,
+		));
+		DB::table('angkorcms_blocks')->insert(array(
+			'name' => 'body',
+			'template_id' => 2,
 		));
 	}
 }
