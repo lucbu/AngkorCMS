@@ -40,4 +40,9 @@ return [
 		'route' => 'angkorcmsusers.index',
 		'spanClass' => 'glyphicon glyphicon-user',
 	],
+	
+	'News' => [
+		'route' => 'angkorcmsnews.index',
+		'spanClass' => 'glyphicon glyphicon-comment',
+	],
 ];

@@ -25,6 +25,7 @@ return array(
 		"login" => "angkorcmslogin",
 		"profile" => "angkorcmsprofile",
 		"changelang" => "angkorcmschangelang",
+		"news" => "angkorcmsnewsmodule",
 	],
 
 );

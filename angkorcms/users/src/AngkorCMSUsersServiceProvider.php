@@ -17,7 +17,7 @@ class AngkorCMSUsersServiceProvider extends ServiceProvider {
 		]);
 		include __DIR__ . '/Http/routes.php';
 
-		View::composer('angkorcms/users/profile', 'AngkorCMS\Users\Http\ViewComposers\ShowComposer');
+		View::composer('angkorcms/users/profile', 'AngkorCMS\Users\Http\ViewComposers\ShowProfileComposer');
 	}
 
 	public function register() {

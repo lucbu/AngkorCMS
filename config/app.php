@@ -121,6 +121,7 @@ return [
 		'AngkorCMS\Pages\AngkorCMSPagesServiceProvider',
 		'AngkorCMS\Slideshow\AngkorCMSSlideshowServiceProvider',
 		'AngkorCMS\Users\AngkorCMSUsersServiceProvider',
+		'AngkorCMS\News\AngkorCMSNewsServiceProvider',
 
 		/*
 		 * Laravel Collective

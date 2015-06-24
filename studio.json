@@ -8,6 +8,7 @@
         "AngkorCMS/Listing": "angkorcms/listing",
         "AngkorCMS/Content": "angkorcms\\content",
         "AngkorCMS/Maps": "angkorcms/maps",
-        "AngkorCMS/Users": "angkorcms\\users"
+        "AngkorCMS/Users": "angkorcms\\users",
+        "AngkorCMS/News": "angkorcms/news"
     }
 }

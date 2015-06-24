@@ -15,14 +15,14 @@ class InstallAngkorCMSPluginsCommand extends Command {
 	public function handle() {
 		$this->call('migrate:install', array());
 		$this->call('migrate', array());
-		
+
 		$this->call('angkorcmsmedias:install', array());
 		$this->info('Medias Installed');
 		$this->call('angkorcmsmultilanguages:install', array());
 		$this->info('Multi-languages Installed');
 		$this->call('angkorcmspages:install', array());
 		$this->info('Pages Installed');
-		
+
 		$this->call('angkorcmsmap:install', array());
 		$this->info('Maps Installed');
 		$this->call('angkorcmsslideshow:install', array());
@@ -31,11 +31,11 @@ class InstallAngkorCMSPluginsCommand extends Command {
 		$this->info('Lists Installed');
 		$this->call('angkorcmscontent:install', array());
 		$this->info('Contents Installed');
-		
-		
-		$this->call('db:seed', array('--class' => 'AngkorCMS\Users\Database\Seeds\DatabaseSeeder'));//User just seed
+
+		$this->call('db:seed', array('--class' => 'AngkorCMS\Users\Database\Seeds\DatabaseSeeder')); //User just seed
 		$this->call('db:seed', array('--class' => 'AngkorCMS\Medias\Database\Seeds\DatabaseSeeder'));
 		$this->call('db:seed', array('--class' => 'AngkorCMS\MultiLanguages\Database\Seeds\DatabaseSeeder'));
 		$this->call('db:seed', array('--class' => 'AngkorCMS\Pages\Database\Seeds\DatabaseSeeder'));
+		$this->call('db:seed', array('--class' => 'AngkorCMS\News\Database\Seeds\DatabaseSeeder'));
 	}
 }

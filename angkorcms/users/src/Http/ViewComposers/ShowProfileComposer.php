@@ -3,7 +3,7 @@
 use AngkorCMS\Users\Repositories\Eloquent\AngkorCMSUserRepository;
 use Illuminate\Contracts\View\View;
 
-class ShowComposer {
+class ShowProfileComposer {
 
 	protected $user_repository;
 

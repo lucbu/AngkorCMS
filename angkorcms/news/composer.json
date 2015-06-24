@@ -1,0 +1,8 @@
+{
+    "name": "AngkorCMS/News",
+    "autoload": {
+        "psr-4": {
+            "AngkorCMS\\News\\": "src/"
+        }
+    }
+}
