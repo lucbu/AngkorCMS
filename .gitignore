@@ -23,7 +23,6 @@ $RECYCLE.BIN/
 
 ### PHP ###
 ## Laravel ##
-/bootstrap/compiled.php
 .env.*.php
 .env.php
 .env
