@@ -22,6 +22,8 @@ class InstallAngkorCMSPluginsCommand extends Command {
 		$this->info('Multi-languages Installed');
 		$this->call('angkorcmspages:install', array());
 		$this->info('Pages Installed');
+		$this->call('angkorcmsnews:install', array());
+		$this->info('News Installed');
 
 		$this->call('angkorcmsmap:install', array());
 		$this->info('Maps Installed');
