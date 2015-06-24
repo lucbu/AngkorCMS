@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run() {
 		Model::unguard();
-		$this->call('AngkorCMS\Users\Database\Seeds\NewsModuleTableSeeder');
+		$this->call('AngkorCMS\News\Database\Seeds\NewsModuleTableSeeder');
 	}
 
 }
