@@ -47,6 +47,11 @@ Install the packages with composer :
 composer install
 ```
 
+You will also may have to launch this command:
+```
+composer dump-autoload
+```
+
 The .env file:
 ```
 APP_ENV=local
