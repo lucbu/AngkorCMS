@@ -2,7 +2,7 @@
 
 Route::group([
 	'namespace' => 'AngkorCMS\News\Http\Controllers',
-	'middleware' => Config::get('angkornews.middleware'),
+	'middleware' => Config::get('angkorcmsnews.middleware'),
 	'prefix' => Config::get('angkornews.prefix'),
 ], function () {
 	Route::resource('angkorcmsnews', 'AngkorCMSPostController');

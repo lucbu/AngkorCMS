@@ -14,7 +14,7 @@ return array(
 	/*
 	 * What middleware is needed to access multilanguages manager
 	 */
-	'middleware' => [],
+	'middleware' => ['auth', 'admin'],
 
 	/*
 	 * The table with the images
