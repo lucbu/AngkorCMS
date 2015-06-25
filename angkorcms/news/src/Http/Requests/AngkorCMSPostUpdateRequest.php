@@ -3,7 +3,7 @@
 use App\Http\Requests\Request;
 use Auth;
 
-class AngkorCMSPostRequest extends Request {
+class AngkorCMSPostUpdateRequest extends Request {
 	/**
 	 * Determine if the user is authorized to make this request.
 	 *
@@ -22,8 +22,8 @@ class AngkorCMSPostRequest extends Request {
 		return [
 			'title' => 'required|max:80',
 			'content' => 'required',
+			'slug' => 'required|alpha_dash|unique:angkorcms_posts,slug,' . $this->segment(count($this->segments())),
 			'tags' => 'tags',
-			'lang_id' => 'required|exists:angkorcms_langs,id',
 		];
 	}
 

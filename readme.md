@@ -26,6 +26,7 @@ http://www.laravel.com
 + Templates and themes
 + Users management
 + Medias
++ News system
 + Plugins (Interactive Maps, Slideshow, Text Content…) (Open to development)
 
 ## Requirement

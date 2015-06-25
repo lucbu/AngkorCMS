@@ -13,7 +13,7 @@ class AngkorCMSNewsServiceProvider extends ServiceProvider {
 			__DIR__ . '/config/angkorcmsnewsmodule.php' => config_path('angkorcmsnewsmodule.php'),
 			__DIR__ . '/config/angkorcmsnews.php' => config_path('angkorcmsnews.php'),
 			__DIR__ . '/resources/views' => base_path('resources/views/angkorcms/news'),
-			//__DIR__ . '/resources/lang' => base_path('resources/views/angkorcms/lang'),
+			__DIR__ . '/resources/lang' => base_path('resources/views/angkorcms/lang'),
 			__DIR__ . '/assets' => public_path('AngkorCMS/News'),
 			//__DIR__ . '/database/migrations' 	=> $this->app->databasePath().'/migrations',
 		]);

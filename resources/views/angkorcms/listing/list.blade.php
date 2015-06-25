@@ -6,7 +6,15 @@
 		@foreach($listing->items as $item)
 			<li class='@if(isset($attr['list-item-class'])){{$attr['list-item-class']}} @endif'>
 				@if($item->url != '')
-					<a href="{{ url($item->url) }}">{!! $item->text !!}</a>
+					@if(strpos($item->url, '#') == 0)
+						@if(url('/') == $parameters['url_base'])
+							<a href="{{ $item->url }}">{!! $item->text !!}</a>
+						@else
+							<a href="{{ url('/'.$item->url) }}">{!! $item->text !!}</a>
+						@endif
+					@else
+						<a href="{{ url($item->url) }}">{!! $item->text !!}</a>
+					@endif
 				@else
 					{!! $item->text !!}
 				@endif

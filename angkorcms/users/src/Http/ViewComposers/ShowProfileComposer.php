@@ -16,13 +16,15 @@ class ShowProfileComposer {
 		$viewParameters = $view->getData();
 
 		$parameters = $viewParameters['parameters'];
-		$data = array('mode' => 'list', 'users' => $this->user_repository->index(10));
+		$data = array();
 		if (count($parameters) >= 2 && isset($parameters['profile']) && is_numeric($parameters['profile'])) {
 			$user_id = intval($parameters['profile']);
 			$user = $this->user_repository->show($user_id);
 			if ($user != null) {
 				$data = array_merge(array('mode' => 'show'), $user);
 			}
+		} else {
+			$data = array('mode' => 'list', 'users' => $this->user_repository->index(10));
 		}
 
 		// Agregate and Send the data to the view

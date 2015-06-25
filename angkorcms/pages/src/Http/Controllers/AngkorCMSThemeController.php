@@ -60,7 +60,7 @@ class AngkorCMSThemeController extends AngkorCMSPageBaseController {
 		return view('angkorcms/pages/theme/edit', $data);
 	}
 
-	public function update($template_id, $id) {
+	public function update($template_id, $id, AngkorCMSThemeRequest $request) {
 		if (!$theme = $this->repository->update($id)) {
 			return Redirect::route('angkorcmstemplates.index')->with('error', 'The theme doesn\'t exist.');
 		}

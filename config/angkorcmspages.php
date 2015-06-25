@@ -6,6 +6,7 @@ return array(
 		'en' => [
 			'index' => 'index',
 			'users' => 'users',
+			'news' 	=> 'news',
 		],
 	],
 );

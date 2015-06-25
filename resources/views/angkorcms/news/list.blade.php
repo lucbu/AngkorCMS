@@ -8,9 +8,9 @@
 		  		{!! link_to_route('angkorcmsnews.create', 'Add a post', [],array('class' => 'btn btn-info')) !!}
 	  		</div>
 	</h1>
-	  @foreach($posts as $post)
+	@foreach($posts as $post)
 	  	{!! View::make('angkorcms/news/post')->with(array('post' => $post, 'full' => false)) !!}
-	  @endforeach
-	  {!! $posts->render() !!}
+	@endforeach
+	{!! $posts->render() !!}
 	</div>
 @stop

@@ -8,6 +8,7 @@
 		<div class="panel-body">
 			<div class="col-sm-12">
 				{!! Form::open(array('route' => array('angkorcmstemplates.angkorcmsthemes.update', $theme->template->id, $theme->id), 'method' => 'put', 'class' => 'form-horizontal panel')) !!}
+				{!! Form::hidden('template_id', $theme->template->id) !!}
 				Name :
 				<small class="text-danger">{{ $errors->first('theme') }}</small>
 				<div class="form-group {{ $errors->has('theme') ? 'has-error has-feedback' : '' }}">

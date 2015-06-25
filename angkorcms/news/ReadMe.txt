@@ -12,6 +12,8 @@ In command line, launch in order:
 Register the service provider in 'config/app.php' :
 		'AngkorCMS\News\AngkorCMSNewsServiceProvider',
 
+Register the module nature in 'config/angkorcmsmodules.php' :
+		"news" => "angkorcmsnewsmodule",
 
 ######################
 #                    #
@@ -20,4 +22,5 @@ Register the service provider in 'config/app.php' :
 ######################
 
 
-
+Attributes available for news module:
+	- news-list-full	: Boolean if each post in the list should be fully written

@@ -2,7 +2,9 @@
 
 use AngkorCMS\Medias\Repositories\Eloquent\AngkorCMSFolderRepository;
 use AngkorCMS\Medias\Repositories\Eloquent\AngkorCMSImageRepository;
+use AngkorCMS\MultiLanguages\Repositories\Eloquent\AngkorCMSLangRepository;
 use AngkorCMS\News\Http\Requests\AngkorCMSPostRequest;
+use AngkorCMS\News\Http\Requests\AngkorCMSPostUpdateRequest;
 use AngkorCMS\News\Repositories\Eloquent\AngkorCMSCommentRepository;
 use AngkorCMS\News\Repositories\Eloquent\AngkorCMSPostRepository;
 use Illuminate\Support\Facades\Redirect;
@@ -27,11 +29,12 @@ class AngkorCMSPostController extends AngkorCMSNewsBaseController {
 		return view('angkorcms/news/read')->with($data);
 	}
 
-	public function create(AngkorCMSFolderRepository $folderrepository, AngkorCMSImageRepository $imagerepository) {
+	public function create(AngkorCMSFolderRepository $folderrepository, AngkorCMSImageRepository $imagerepository, AngkorCMSLangRepository $lang_repository) {
 		$folders = $folderrepository->getFullFolders();
 		$imagesroot = $imagerepository->getListByFolder();
+		$langs = $lang_repository->allLangsShort();
 
-		$data = array_merge($folders, $imagesroot);
+		$data = array_merge($folders, $imagesroot, compact('langs'));
 
 		return view('angkorcms/news/add', $data);
 	}
@@ -41,18 +44,19 @@ class AngkorCMSPostController extends AngkorCMSNewsBaseController {
 		return Redirect::route('angkorcmsnews.show', [$id]);
 	}
 
-	public function edit($id, AngkorCMSFolderRepository $folderrepository, AngkorCMSImageRepository $imagerepository) {
+	public function edit($id, AngkorCMSFolderRepository $folderrepository, AngkorCMSImageRepository $imagerepository, AngkorCMSLangRepository $lang_repository) {
 		$folders = $folderrepository->getFullFolders();
 		$imagesroot = $imagerepository->getListByFolder();
+		$langs = $lang_repository->allLangsShort();
 
 		$post = $this->post_repository->getPost($id);
 
-		$data = array_merge(compact('post'), $folders, $imagesroot);
+		$data = array_merge(compact('post'), $folders, $imagesroot, compact('langs'));
 
 		return view('angkorcms/news/edit', $data);
 	}
 
-	public function update($id, AngkorCMSPostRequest $request) {
+	public function update($id, AngkorCMSPostUpdateRequest $request) {
 		$post = $this->post_repository->getPost($id);
 		$this->post_repository->update($id);
 		return Redirect::route('angkorcmsnews.show', [$id])

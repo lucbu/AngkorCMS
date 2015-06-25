@@ -1,7 +1,6 @@
 <div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">{!! link_to_route('angkorcmsnews.show', $post->title, [$post->id]) !!}</h3>
-
+	<div class="panel-heading"><img src="{{$post->lang->image->url()}}" alt="{{$post->lang->code}}" style="float:right;">
+		<h3 class="panel-title" style="display:inline;">{!! link_to_route('angkorcmsnews.show', $post->title, [$post->id]) !!}</h3>
 	</div>
 	<div class="panel-body">
 	<p>
@@ -53,7 +52,7 @@
 		document.getElementById("hideEdit"+id).style.display="inline";
 		document.getElementById("listEdit"+id).style.display="block";
 	}
-	
+
 	function hideEdit(id){
 		document.getElementById("showEdit"+id).style.display="inline";
 		document.getElementById("hideEdit"+id).style.display="none";

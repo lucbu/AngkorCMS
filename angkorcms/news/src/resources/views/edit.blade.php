@@ -7,9 +7,20 @@
 			<div class="panel-heading">Edit a post</div>
 			<div class="panel-body">
 				{!! Form::open(array('url' => route('angkorcmsnews.update', [$post->id]), 'method' => 'put',)) !!}
+					Language :
+					<small class="text-danger">{{ $errors->first('lang_id') }}</small>
+					<div class="form-group {{ $errors->has('lang_id') ? 'has-error has-feedback' : '' }}">
+						{!! Form::select('lang_id', $langs, $post->lang_id, array('class' => 'form-control')) !!}
+					</div>
+					Title :
 					<small class="text-danger">{{ $errors->first('title') }}</small>
 					<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
 						{!! Form::text('title', $post->title, array('class' => 'form-control', 'placeholder' => 'Title')) !!}
+					</div>
+					Slug :
+					<small class="text-danger">{{ $errors->first('slug') }}</small>
+					<div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
+						{!! Form::text('slug', $post->slug, array('class' => 'form-control', 'placeholder' => 'Slug')) !!}
 					</div>
 					<div class="form-group">
 						See image's url :
