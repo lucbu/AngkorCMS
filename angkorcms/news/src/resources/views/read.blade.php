@@ -14,11 +14,13 @@
 				{!! $comments->render() !!}
 				<div class="panel-body">
 					@foreach ($comments as $comment)
-						<a href="{{ route('angkorcmscomment.del', array($comment->id)) }}">
-							<img src="{{ asset('AngkorCMS/News/circle_close_delete-128.png') }}" width="10px">
-						</a>
-						{{ $comment->user->name }} ({{ $comment->created_at->format('d-m-Y h:i:s') }}) : <br>
-						{{ $comment->content }}
+						<p>
+							<a href="{{ route('angkorcmscomment.del', array($comment->id)) }}">
+								<img src="{{ asset('AngkorCMS/News/circle_close_delete-128.png') }}" width="10px">
+							</a>
+							{{ $comment->user->name }} ({{ $comment->created_at->format('d-m-Y h:i:s') }}) : <br>
+							{{ $comment->content }}
+						</p>
 					@endforeach
 					</div>
 				{!! $comments->render() !!}

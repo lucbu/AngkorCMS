@@ -42,7 +42,7 @@ class AuthenticatedAsAdmin {
 		if ($request->ajax()) {
 			return response('Unauthorized.', 401);
 		} else {
-			return redirect()->back()->with('error', 'You should be logged in as an admin');
+			return redirect('/')->with('error', 'You should be logged in as an admin');
 		}
 	}
 
