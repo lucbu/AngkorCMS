@@ -38,7 +38,25 @@ class FrontController extends Controller {
 	public function indexGeneral($slug, $parameters = array()) {
 		$page_trans = $this->page_trans_repository->getBySlug($slug);
 
-		if ($page_trans == null OR !$page_trans->page->accessible) {
+		if ($page_trans == null) {
+			if (count($parameters) > 0) {
+				if (isset($parameters[0])) {
+					$parameters[$slug] = $parameters[0];
+					unset($parameters[0]);
+				}
+				$nextPath = '';
+				foreach ($parameters as $key => $value) {
+					$nextPath = '/' . $key . '/' . $value;
+				}
+				Session::reflash();
+				$newUrl = Session::get('language')->code . '/' . Config::get('angkorcmspages.alias.' . Session::get('language')->code . '.index') . $nextPath;
+				return Redirect::to($newUrl);
+			} else {
+				App::abort(404);
+			}
+		}
+
+		if (!$page_trans->page->accessible) {
 			App::abort(404);
 		}
 
