@@ -17,7 +17,7 @@ return array(
 	/*
 	 * What middleware is needed to access this plugin
 	 */
-	'middleware' => [],
+	'middleware' => ['auth', 'admin'],
 
 	/*
 	 * What prefix will be used to the url accessing this plugin
