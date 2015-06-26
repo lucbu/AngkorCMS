@@ -23,4 +23,10 @@ Register the module nature in 'config/angkorcmsmodules.php' :
 
 
 Attributes available for news module:
-	- news-list-full	: Boolean if each post in the list should be fully written
+	- news-list-full		: Boolean if each post in the list should be fully written
+	- news-panel-class		: div
+	- news-panel-heading-class 	: div
+	- news-panel-title-class 	: class of h3
+	- news-panel-body-class 	: div
+	- news-comment-class 		: comment div
+	- news-post-class		: div

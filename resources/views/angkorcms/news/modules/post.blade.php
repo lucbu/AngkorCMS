@@ -1,11 +1,11 @@
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title"><a href="{{$parameters['url_base']}}/post/{{$post->slug}}">{{$post->title}}</a></h3>
+<div class="{{ isset($attr['news-panel-class']) ? $attr['news-panel-class'] : 'panel panel-default' }}">
+	<div class="{{ isset($attr['news-panel-heading-class']) ? $attr['news-panel-heading-class'] : 'panel-heading' }}">
+		<h3 class="{{ isset($attr['news-panel-title-class']) ? $attr['news-panel-title-class'] : 'panel-title' }}"><a href="{{$parameters['url_base']}}/post/{{$post->slug}}">{{$post->title}}</a></h3>
 	</div>
-	<div class="panel-body">
-		<p>
+	<div class="{{ isset($attr['news-panel-body-class']) ? $attr['news-panel-body-class'] : 'panel-body' }}">
+		<div class="{{ isset($attr['news-post-class']) ? $attr['news-post-class'] : '' }}">
 			@if(isset($full) && !$full)
-			 {{--*/ $mots = explode(' ', strip_tags($post->content)) /*--}}
+			 <?php $mots = explode(' ', strip_tags($post->content));?>
 				@if(count($mots)>20)
 					@for($i = 0; $i < 20; $i++)
 					{{ $mots[$i].' ' }}
@@ -17,7 +17,7 @@
 			@else
 			{!! $post->content !!}
 			@endif
-		</p>
+		</div>
 		<em class="pull-right">
 			{{ Lang::get('angkorcmsnewsmodule.written', ['name' => $post->user->name, "date" => $post->created_at->format('d-m-Y h:i:s')]) }}
 		</em>

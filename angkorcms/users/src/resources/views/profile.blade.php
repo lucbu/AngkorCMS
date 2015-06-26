@@ -16,7 +16,7 @@
 	<div class="@if(isset($attr['profile-panelprimary-class'])) {{$attr['profile-panelprimary-class']}} @else panel panel-primary @endif">
 		<div class="@if(isset($attr['profile-panelheading-class'])) {{$attr['profile-panelheading-class']}} @else panel-heading @endif">{{ Lang::get('angkorcmsprofile.title.list') }}</div>
 		<div class="@if(isset($attr['profile-panelbody-class'])) {{$attr['profile-panelbody-class']}} @else panel-body @endif">
-			<table class="table">
+			<table class="{{ isset($attr['profile-table-class']) ? $attr['profile-table-class'] : 'table' }}">
 				<thead>
 					<tr>
 						<th>#</th>

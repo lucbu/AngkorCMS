@@ -35,3 +35,4 @@ Attributes available for profile module:
 	- profile-panelheading-class	: The CSS class of the head of the panel
 	- profile-panelbody-class	: The CSS class of the body of the panel
 	- profile-panelprimary-class	: The CSS class of the panel
+	- profile-table-class		: The CSS class of the table listing the members

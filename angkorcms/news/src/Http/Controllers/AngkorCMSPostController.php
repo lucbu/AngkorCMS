@@ -70,7 +70,8 @@ class AngkorCMSPostController extends AngkorCMSNewsBaseController {
 	}
 
 	public function getTag($tag) {
-		return view('angkorcms/news/list', $this->post_repository->tag($tag, 4))
-			->with('ok', 'Results for the tag : ' . $tag);
+		$posts = $this->post_repository->tag($tag, 10);
+		return view('angkorcms/news/list', $posts)
+			->with('ok', 'Results for the tag : ' . $posts);
 	}
 }

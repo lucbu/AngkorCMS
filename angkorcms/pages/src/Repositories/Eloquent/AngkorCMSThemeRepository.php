@@ -82,17 +82,17 @@ class AngkorCMSThemeRepository implements AngkorCMSThemeRepositoryInterface {
 		$script = Input::get('script');
 
 		// Style
-		$styleFile = fopen($pathCss . '\\' . $theme->style, 'r+');
+		$styleFile = fopen($pathCss . '' . $theme->style, 'r+');
 		ftruncate($styleFile, 0);
 		fputs($styleFile, $style);
 		fclose($styleFile);
 		// View
-		$viewFile = fopen($pathView . '\\' . $theme->view, 'r+');
+		$viewFile = fopen($pathView . '' . $theme->view, 'r+');
 		ftruncate($viewFile, 0);
 		fputs($viewFile, $view);
 		fclose($viewFile);
 		// Script
-		$scriptFile = fopen($pathJs . '\\' . $theme->script, 'r+');
+		$scriptFile = fopen($pathJs . '' . $theme->script, 'r+');
 		ftruncate($scriptFile, 0);
 		fputs($scriptFile, $script);
 		fclose($scriptFile);
