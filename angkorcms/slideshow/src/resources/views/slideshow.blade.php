@@ -43,11 +43,11 @@
 
 	<!-- Controls -->
 	<a class="left carousel-control" href="#carousel-{{$unique_id}}" role="button" data-slide="prev">
-		<span class="glyphicon glyphicon-chevron-left"></span>
+		<span class="{{ isset($attr['slideshow-go-left']) ? $attr['slideshow-go-left'] : 'glyphicon glyphicon-chevron-left' }}"></span>
 		<span class="sr-only">Previous</span>
 	</a>
 	<a class="right carousel-control" href="#carousel-{{$unique_id}}" role="button" data-slide="next">
-		<span class="glyphicon glyphicon-chevron-right"></span>
+		<span class="{{ isset($attr['slideshow-go-right']) ? $attr['slideshow-go-right'] : 'glyphicon glyphicon-chevron-right' }}"></span>
 		<span class="sr-only">Next</span>
 	</a>
 </div>

@@ -35,3 +35,5 @@ You can pass some attributes to the view :
 	'slideshow-height' => String to choose the height of the slideshow
 	'slideshow-width' => String to choose the width of the slideshow
 	'slideshow-interval' => Integer number of milliseconde between slides
+	'slideshow-go-left' => The class of the span representing the arrow to the left
+	'slideshow-go-right' => The class of the span representing the arrow to the right
