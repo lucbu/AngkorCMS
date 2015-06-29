@@ -28,13 +28,16 @@ class AngkorCMSFolderRepository implements AngkorCMSFolderRepositoryInterface {
 	}
 
 	public function changeFolder() {
-		$folder = AngkorCMSFolder::find(Input::get('image_id'));
-		$folderid = null;
-		if (is_numeric(Input::get('folder_id'))) {
-			$folderid = Input::get('folder_id');
+		$folder = AngkorCMSFolder::find(Input::get('folder_id'));
+		$parent_folder_id = null;
+		if (is_numeric(Input::get('parent_folder_id'))) {
+			if (Input::get('folder_id') == Input::get('parent_folder_id')) {
+				return false;
+			}
+			$parent_folder_id = Input::get('parent_folder_id');
 		}
-		$image->folder_parent_id = $folderid;
-		$image->save();
+		$folder->folder_parent_id = $parent_folder_id;
+		return $folder->save();
 	}
 
 	public function getById($id) {

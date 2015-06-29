@@ -1,6 +1,7 @@
 <?php namespace AngkorCMS\Medias\Http\Controllers;
 
 use AngkorCMS\Medias\Http\Controllers\AngkorCMSMediaBaseController;
+use AngkorCMS\Medias\Http\Requests\AngkorCMSImageChangeFolderRequest;
 use AngkorCMS\Medias\Http\Requests\AngkorCMSImageRequest;
 use AngkorCMS\Medias\Repositories\Eloquent\AngkorCMSImageRepository;
 use Input;
@@ -17,7 +18,7 @@ class AngkorCMSImageController extends AngkorCMSMediaBaseController {
 		$this->middleware('angkorcmsajax');
 	}
 
-	public function postStoreImageAjax(AngkorCMSImageRequest $request) {
+	public function postImageAjax(AngkorCMSImageRequest $request) {
 		if ($image = $this->repository->store()) {
 			return Response::json(array(
 				'ok' => 1,
@@ -33,15 +34,15 @@ class AngkorCMSImageController extends AngkorCMSMediaBaseController {
 		}
 	}
 
-	public function postChangeImageFolderAjax() {
-		if ($file = $this->repository->changeFolder()) {
-			return Response::json(array('ok' => 1, 'id' => $id));
+	public function putImageFolderAjax(AngkorCMSImageChangeFolderRequest $request) {
+		if ($this->repository->changeFolder()) {
+			return Response::json(array('ok' => 1));
 		} else {
-			return Response::json(array('ok' => 0, 'error' => 'Problem deleting image.'));
+			return Response::json(array('ok' => 0, 'error' => 'Problem move image to another folder.'));
 		}
 	}
 
-	public function postDelImageAjax() {
+	public function deleteImageAjax() {
 		$id = Input::get('image_id');
 		if ($file = $this->repository->destroy($id)) {
 			return Response::json(array('ok' => 1, 'id' => $id));

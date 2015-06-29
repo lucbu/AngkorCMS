@@ -1,55 +1,73 @@
-@extends('admin/admin')
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Admin - @yield('title', 'Back-End')</title>
 
-@section('content')
-<div class="col-sm-offset-4 col-sm-4">
-	<div class="panel panel-info">
-		<div class="panel-heading">Upload a picture</div>
-		<div class="panel-body">
-			{!! Form::open(array('url' => '', 'files' => true, 'id' => 'uploadPicture')) !!}
-			{!! Form::hidden('folder_id', '', array('class' => 'folder_id_current')) !!}
-			<small class="text-danger"><div id='errorImage'></div></small>
-			<div class="form-group" id='divImage'>
-				{!! Form::file('image', array('class' => 'form-control', 'id' => 'image')) !!}
+		<!-- CSS -->
+		<link href="{{ asset('/css/bootstrap-3.3.2-dist/css/bootstrap.min.css') }}" rel="stylesheet">
+		<link href="{{ asset('/css/admin.css') }}" rel="stylesheet">
+
+		<!-- Fonts -->
+		<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+
+		<!-- Scripts -->
+		<script type="text/javascript" src="{{ asset('/js/jquery-2.1.3.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('/js/bootstrap.min.js') }}"></script>
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body style="margin:15px 0px;">
+		<div class="col-sm-offset-1 col-sm-10">
+			<div class="panel panel-info">
+				<div class="panel-heading">Upload a picture</div>
+				<div class="panel-body">
+					{!! Form::open(array('url' => '', 'files' => true, 'id' => 'uploadPicture')) !!}
+					{!! Form::hidden('folder_id', '', array('class' => 'folder_id_current')) !!}
+					<small class="text-danger"><div id='errorImage'></div></small>
+					<div class="form-group" id='divImage'>
+						{!! Form::file('image', array('class' => 'form-control', 'id' => 'image')) !!}
+					</div>
+					{!! Form::submit('Envoyer !', array('class' => 'btn btn-info pull-right hidden')) !!}
+					{!! Form::close() !!}
+				</div>
 			</div>
-			{!! Form::submit('Envoyer !', array('class' => 'btn btn-info pull-right hidden')) !!}
-			{!! Form::close() !!}
 		</div>
-	</div>
-</div>
 
-<div class="col-sm-offset-4 col-sm-4">
-	<div class="panel panel-info">
-		<div class="panel-body">
-			{!! Form::open(array('url' => '', 'files' => true, 'id' => 'addFolder')) !!}
-			{!! Form::hidden('folder_id', '', array('class' => 'folder_id_current')) !!}
-			<small class="text-danger"><div id='errorFolder'></div></small>
-			<div class="form-group" id='divFolder'>
-				{!! Form::text('name', '', array('class' => 'form-control col-xs-3', 'id' => 'folder')) !!}
-			</div>
-			{!! Form::submit('Add Folder !', array('class' => 'btn btn-info pull-right')) !!}
-			{!! Form::close() !!}
+		<div class="col-sm-offset-1 col-sm-10" id="listMedia">
+			{!! View::make('angkorcms\medias\listMedia')->with(array('folders' => $folders, 'images' => $images)) !!}
 		</div>
-	</div>
-</div>
-<div class="col-sm-offset-2 col-sm-8" id="listMedia">
-	{!! View::make('angkorcms\medias\listMedia')->with(array('folders' => $folders, 'images' => $images)) !!}
-</div>
 
-{!! Form::open(array('url' => '', 'files' => true, 'id' => 'delImage')) !!}
-{!! Form::hidden('image_id', '', array('id' => 'image_id_form')) !!}
-{!! Form::close() !!}
+		{!! Form::open(array('url' => '', 'files' => true, 'id' => 'delImage', 'method' => 'DELETE')) !!}
+			{!! Form::hidden('image_id', '', array('id' => 'image_id_form')) !!}
+		{!! Form::close() !!}
 
-{!! Form::open(array('url' => '', 'files' => true, 'id' => 'delFolder')) !!}
-{!! Form::hidden('folder_id', '', array('id' => 'folder_id_form')) !!}
-{!! Form::close() !!}
+		{!! Form::open(array('url' => '', 'files' => true, 'id' => 'delFolder', 'method' => 'DELETE')) !!}
+			{!! Form::hidden('folder_id', '', array('id' => 'folder_id_form')) !!}
+		{!! Form::close() !!}
 
-{!! Form::open(array('url' => '', 'files' => true, 'id' => 'openFolder')) !!}
-{!! Form::hidden('folder_id', '', array('id' => 'folder_id_open')) !!}
-{!! Form::close() !!}
+		{!! Form::open(array('url' => '', 'files' => true, 'id' => 'openFolder')) !!}
+			{!! Form::hidden('folder_id', '', array('id' => 'folder_id_open')) !!}
+		{!! Form::close() !!}
 
-@stop
+		{!! Form::open(array('url' => '', 'files' => true, 'id' => 'putImageFolder', 'method' => 'PUT')) !!}
+			{!! Form::hidden('folder_id', '', array('id' => 'image_parent_folder_id')) !!}
+			{!! Form::hidden('image_id', '', array('id' => 'image_id_to_move')) !!}
+		{!! Form::close() !!}
 
-<!-- List of script -->
-@section('script')
-{!! View::make('angkorcms\medias\script') !!}
-@stop
+		{!! Form::open(array('url' => '', 'files' => true, 'id' => 'putFolderParent', 'method' => 'PUT')) !!}
+			{!! Form::hidden('folder_id', '', array('id' => 'folder_id_to_move')) !!}
+			{!! Form::hidden('parent_folder_id', '', array('id' => 'folder_id_parent')) !!}
+		{!! Form::close() !!}
+
+		<!-- List of script -->
+		{!! View::make('angkorcms\medias\script') !!}
+	</body>
+</html>

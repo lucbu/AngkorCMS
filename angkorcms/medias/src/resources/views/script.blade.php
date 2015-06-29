@@ -61,11 +61,19 @@
 		});
 	});
 
+	function getNameFolder(){
+		var nameFolder = prompt("Enter the name of the folder", "");
+		document.getElementById('folder').setAttribute('value',nameFolder);
+		if(nameFolder == null){
+			document.getElementById('folder').setAttribute('value','');
+			return false;
+		}
+	}
 	function delImage(id){
 		if(confirm('Are you sure you want to delete this picture ?')){
 			document.getElementById('image_id_form').setAttribute('value',id);
 			$.ajax( {
-					url: '{{route('image.del.ajax')}}',
+					url: '{{route('image.delete.ajax')}}',
 					type: 'POST',
 					data:  new FormData(document.getElementById('delImage')),
 					processData: false,
@@ -85,7 +93,7 @@
 		if(confirm('Are you sure you want to delete this folder ?')){
 			document.getElementById('folder_id_form').setAttribute('value',id);
 			$.ajax( {
-					url: '{{route('folder.del.ajax')}}',
+					url: '{{route('folder.delete.ajax')}}',
 					type: 'POST',
 					data:  new FormData(document.getElementById('delFolder')),
 					processData: false,
@@ -124,4 +132,70 @@
 					}
 				});
 	}
+	function putImageFolder(image_id, folder_id){
+			document.getElementById('image_id_to_move').setAttribute('value',image_id);
+			document.getElementById('image_parent_folder_id').setAttribute('value',folder_id);
+			$.ajax( {
+					url: '{{route('image.changeFolder.ajax')}}',
+					type: 'POST',
+					data:  new FormData(document.getElementById('putImageFolder')),
+					processData: false,
+					contentType: false,
+					success: function(data){
+						if(data.ok){
+							$('#image'+image_id).remove();
+						}else{
+							alert("A problem has occured.");
+						}
+					},
+					error: function(xhr, textStatus, errorThrown){
+						alert("A problem has occured.");
+					}
+				});
+	}
+	function putParentFolder(folder_id, parent_folder_id){
+			document.getElementById('folder_id_to_move').setAttribute('value',folder_id);
+			document.getElementById('folder_id_parent').setAttribute('value',parent_folder_id);
+			$.ajax( {
+					url: '{{route('folder.changeParent.ajax')}}',
+					type: 'POST',
+					data:  new FormData(document.getElementById('putFolderParent')),
+					processData: false,
+					contentType: false,
+					success: function(data){
+						if(data.ok){
+							$('#folder'+folder_id).remove();
+						}else{
+							alert("A problem has occured.");
+						}
+					},
+					error: function(xhr, textStatus, errorThrown){
+						alert("A problem has occured.");
+					}
+				});
+	}
+	function startDragImage(ev, image_id){
+    	ev.dataTransfer.setData("type_data", 'image');
+    	ev.dataTransfer.setData("image_id", image_id);
+	}
+	function startDragFolder(ev, folder_id){
+    	ev.dataTransfer.setData("type_data", 'folder');
+    	ev.dataTransfer.setData("folder_id", folder_id);
+	}
+	function dropOnFolder(ev, folder_id) {
+	    ev.preventDefault();
+	    var type_data = ev.dataTransfer.getData("type_data");
+	    if(type_data == 'image'){
+	    	var image_id = ev.dataTransfer.getData("image_id");
+	    	putImageFolder(image_id, folder_id);
+	    }else if(type_data == 'folder'){
+	    	var origin_folder_id = ev.dataTransfer.getData("folder_id");
+	    	if(folder_id != origin_folder_id){
+	    		putParentFolder(origin_folder_id, folder_id);
+	    	}
+	    }
+    }
+    function allowDrop(event) {
+    	event.preventDefault();
+    }
 </script>

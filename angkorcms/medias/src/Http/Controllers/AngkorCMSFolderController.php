@@ -1,6 +1,7 @@
 <?php namespace AngkorCMS\Medias\Http\Controllers;
 
 use AngkorCMS\Medias\Http\Controllers\AngkorCMSMediaBaseController;
+use AngkorCMS\Medias\Http\Requests\AngkorCMSFolderChangeFolderRequest;
 use AngkorCMS\Medias\Http\Requests\AngkorCMSFolderRequest;
 use AngkorCMS\Medias\Repositories\Eloquent\AngkorCMSFolderRepository;
 use AngkorCMS\Medias\Repositories\Eloquent\AngkorCMSImageRepository;
@@ -17,7 +18,7 @@ class AngkorCMSFolderController extends AngkorCMSMediaBaseController {
 		$this->middleware('angkorcmsajax');
 	}
 
-	public function postStoreFolderAjax(AngkorCMSFolderRequest $request) {
+	public function postFolderAjax(AngkorCMSFolderRequest $request) {
 		if ($folder = $this->repository->store()) {
 			return Response::json(array(
 				'ok' => 1,
@@ -30,15 +31,15 @@ class AngkorCMSFolderController extends AngkorCMSMediaBaseController {
 		}
 	}
 
-	public function postChangeParentFolderAjax() {
-		if ($file = $this->repository->changeFolder()) {
-			return Response::json(array('ok' => 1, 'id' => $id));
+	public function putParentFolderAjax(AngkorCMSFolderChangeFolderRequest $request) {
+		if ($this->repository->changeFolder()) {
+			return Response::json(array('ok' => 1));
 		} else {
 			return Response::json(array('ok' => 0, 'error' => 'Problem changing folder.'));
 		}
 	}
 
-	public function postDelFolderAjax() {
+	public function deleteFolderAjax() {
 		$id = Input::get('folder_id');
 		if ($file = $this->repository->destroy($id)) {
 			return Response::json(array('ok' => 1, 'id' => $id));

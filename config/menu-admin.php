@@ -12,6 +12,7 @@ return [
 	],
 
 	'Medias' => [
+		'pop-up' => true,
 		'route' => 'angkorcms.medias',
 		'spanClass' => 'glyphicon glyphicon-picture',
 	],
@@ -40,7 +41,7 @@ return [
 		'route' => 'angkorcmsusers.index',
 		'spanClass' => 'glyphicon glyphicon-user',
 	],
-	
+
 	'News' => [
 		'route' => 'angkorcmsnews.index',
 		'spanClass' => 'glyphicon glyphicon-comment',

@@ -9,15 +9,15 @@ Route::group([
 	Route::get('angkorcmsmedias', ['as' => 'angkorcms.medias', 'uses' => 'AngkorCMSMediaController@index']);
 
 	Route::controller('angkorcmsimage', 'AngkorCMSImageController', array(
-		'postStoreImageAjax' => 'image.store.ajax',
-		'postChangeImageFolderAjax' => 'image.changeFolder.ajax',
-		'postDelImageAjax' => 'image.del.ajax',
+		'postImageAjax' => 'image.store.ajax',
+		'putImageFolderAjax' => 'image.changeFolder.ajax',
+		'deleteImageAjax' => 'image.delete.ajax',
 	));
 
 	Route::controller('angkorcmsfolder', 'AngkorCMSFolderController', [
-		'postStoreFolderAjax' => 'folder.store.ajax',
-		'postChangeParentFolderAjax' => 'folder.changeParent.ajax',
-		'postDelFolderAjax' => 'folder.del.ajax',
+		'postFolderAjax' => 'folder.store.ajax',
+		'putParentFolderAjax' => 'folder.changeParent.ajax',
+		'deleteFolderAjax' => 'folder.delete.ajax',
 		'postOpenFolderAjax' => 'folder.open.ajax',
 	]);
 });

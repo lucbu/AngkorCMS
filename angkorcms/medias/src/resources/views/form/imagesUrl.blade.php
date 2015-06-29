@@ -27,4 +27,5 @@
 		</optgroup>
 	</select>
 </div>
+{!! View::make('angkorcms\medias\form\graphicalView') !!}
 <input class="form-control urlimage" type='text'  readonly value=""/>

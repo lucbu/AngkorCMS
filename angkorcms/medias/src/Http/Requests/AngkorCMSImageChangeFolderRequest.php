@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class AngkorCMSFolderRequest extends Request {
+class AngkorCMSImageChangeFolderRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -20,7 +20,7 @@ class AngkorCMSFolderRequest extends Request {
 	 */
 	public function rules() {
 		return [
-			'name' => 'required',
+			'image_id' => 'numeric|exists:angkorcms_images,id',
 			'folder_id' => 'numeric|exists:angkorcms_folders,id',
 		];
 	}

@@ -49,7 +49,8 @@ class AngkorCMSImageRepository implements AngkorCMSImageRepositoryInterface {
 			$folderid = Input::get('folder_id');
 		}
 		$image->folder_id = $folderid;
-		$image->save();
+
+		return $image->save();
 	}
 
 	public function getById($id) {

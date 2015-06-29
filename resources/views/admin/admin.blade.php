@@ -37,7 +37,7 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						@foreach(Config::get('menu-admin') as $key => $value)
-							<li><a href="{{ route($value['route']) }}"><span class="{{$value['spanClass']}}"></span> {{ $key }}</a></li>
+							<li><a href="{{ route($value['route']) }}" @if(isset($value['pop-up']) and $value['pop-up'] == true) onclick="open('{{ route($value['route']) }}', 'AngkorCMS Medias', 'scrollbars=1,resizable=1,height=560,width=1000'); return false;" @endif><span class="{{$value['spanClass']}}"></span> {{ $key }}</a></li>
 						@endforeach
 					</ul>
 
