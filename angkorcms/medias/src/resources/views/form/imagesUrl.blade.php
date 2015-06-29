@@ -27,5 +27,7 @@
 		</optgroup>
 	</select>
 </div>
-{!! View::make('angkorcms\medias\form\graphicalView') !!}
+
+{!! View::make('angkorcms\medias\form\graphicalView')->with(array('folders' => $folders, 'images' => $imagesroot)) !!}
+
 <input class="form-control urlimage" type='text'  readonly value=""/>

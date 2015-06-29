@@ -1,16 +1,15 @@
 <!-- Button trigger modal -->
-<script src="http://malsup.github.com/jquery.form.js"></script>
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#graphicalview">
   Launch demo modal
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="GraphicalView" tabindex="-1" role="dialog" aria-labelledby="GraphicalViewLabel">
+<div class="modal fade" id="graphicalview" tabindex="-1" role="dialog" aria-labelledby="graphicalviewLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="GraphicalViewLabel">Modal title</h4>
+        <h4 class="modal-title" id="graphicalviewLabel">Modal title</h4>
       </div>
       <div class="modal-body">
         <div class="col-sm-offset-1 col-sm-10">
@@ -30,6 +29,7 @@
         </div>
 
         <div class="col-sm-offset-1 col-sm-10" id="listMedia">
+          {!! View::make('angkorcms\medias\listMedia')->with(array('folders' => $folders, 'images' => $images)) !!}
         </div>
 
         {!! Form::open(array('url' => '', 'files' => true, 'id' => 'delImage', 'method' => 'DELETE')) !!}
