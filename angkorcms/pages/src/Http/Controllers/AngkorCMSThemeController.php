@@ -1,7 +1,5 @@
 <?php namespace AngkorCMS\Pages\Http\Controllers;
 
-use AngkorCMS\Medias\Repositories\Eloquent\AngkorCMSFolderRepository;
-use AngkorCMS\Medias\Repositories\Eloquent\AngkorCMSImageRepository;
 use AngkorCMS\Pages\Http\Requests\AngkorCMSThemeRequest;
 use AngkorCMS\Pages\Repositories\Eloquent\AngkorCMSTemplateRepository;
 use AngkorCMS\Pages\Repositories\Eloquent\AngkorCMSThemeRepository;
@@ -38,7 +36,7 @@ class AngkorCMSThemeController extends AngkorCMSPageBaseController {
 		return Redirect::route('angkorcmstemplates.angkorcmsthemes.edit', array($theme->template->id, $theme->id))->with('info', 'The page has been created.');
 	}
 
-	public function edit($template_id, $id, AngkorCMSFolderRepository $folderrepository, AngkorCMSImageRepository $imagerepository) {
+	public function edit($template_id, $id) {
 
 		$theme = $this->repository->getById($id);
 		if (is_null($theme)) {
@@ -52,11 +50,9 @@ class AngkorCMSThemeController extends AngkorCMSPageBaseController {
 		$style = file_get_contents($pathCss . '\\' . $theme->style);
 		$view = file_get_contents($pathView . '\\' . $theme->view);
 		$script = file_get_contents($pathJs . '\\' . $theme->script);
-		$folders = $folderrepository->getFullFolders();
-		$imagesroot = $imagerepository->getListByFolder();
 
 		$data = array("theme" => $theme, "style" => $style, "script" => $script, "view" => $view);
-		$data = array_merge($data, $folders, $imagesroot);
+
 		return view('angkorcms/pages/theme/edit', $data);
 	}
 

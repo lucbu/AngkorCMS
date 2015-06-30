@@ -34,7 +34,7 @@
 					</ul></p>
 				<div class="form-group">
 					See image's url : (In CSS and JS just use the path to image with "../../../" before)
-					{!! View::make('angkorcms/medias/form/imagesUrl')->with(array('folders' => $folders, 'imagesroot' => $images, 'path' => true)) !!}
+					{!! View::make('angkorcms/medias/form/imagesUrl')->with(array('path' => true)) !!}
 				</div>
 
 				{{$theme->style}} :
