@@ -29,6 +29,9 @@ http://www.laravel.com
 + News system
 + Plugins (Interactive Maps, Slideshow, Text Content…) (Open to development)
 
+#Screenshots
+Check the screenshots [here](https://github.com/lucbu/AngkorCMS/wiki/Screenshots)
+
 ## Requirement
 
 You should install an PHP server (like [XAMPP](https://www.apachefriends.org/faq_windows.html)) and [Composer](https://getcomposer.org/doc/00-intro.md#installation-windows).
