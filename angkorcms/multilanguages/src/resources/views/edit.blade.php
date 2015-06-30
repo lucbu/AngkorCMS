@@ -23,7 +23,9 @@
 				<div class="form-group {{ $errors->has('image_id') ? 'has-error has-feedback' : '' }}">
 					{!! View::make('angkorcms/medias/form/chooseOneImage')->with(array('object' => $lang)) !!}
 				</div>
+
 				{!! Form::submit('Edit', array('class' => 'btn btn-primary pull-right')) !!}
+
 				{!! Form::close() !!}
 			</div>
 		</div>

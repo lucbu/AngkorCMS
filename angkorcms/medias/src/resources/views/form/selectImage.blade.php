@@ -1,3 +1,4 @@
+{!! View::make('angkorcms\medias\form\graphicalView')->with(array('folders' => $foldersroot, 'images' => $images)) !!}
 <div>
 	<select id="selectImage" class="form-control col-xs-2">
 		<option value='' url="">No picture</option>

@@ -42,6 +42,16 @@
 		</div>
 
 		<div class="col-sm-offset-1 col-sm-10" id="listMedia">
+
+		{!! Form::open(array('url' => '', 'files' => true, 'id' => 'addFolder', 'style'=>'display:inline;float:right;margin-right:15px;')) !!}
+			{!! Form::hidden('folder_id', '', array('class' => 'folder_id_current')) !!}
+			<small class="text-danger"><div id='errorFolder'></div></small>
+			<div class="form-group" id='divFolder'>
+				{!! Form::hidden('name', '', array('class' => 'form-control col-xs-3', 'id' => 'folder')) !!}
+			</div>
+			{!! Form::submit('Add Folder !', array('class' => 'btn btn-info pull-right', 'onclick' => 'getNameFolder();')) !!}
+		{!! Form::close() !!}
+
 			{!! View::make('angkorcms\medias\listMedia')->with(array('folders' => $folders, 'images' => $images)) !!}
 		</div>
 

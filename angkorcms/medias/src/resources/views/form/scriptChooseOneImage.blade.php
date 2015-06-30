@@ -18,4 +18,15 @@
 			$("#imageChosed").html('');
 		}
 	}
+	$('#listMedia').on("click", ".image", function(e){
+		e.preventDefault();
+
+		var id = $(this).attr('image-id');
+		$("#image_id").val(id);
+
+		var url = $(this).find('a').attr('href');
+		$("#imageChosed").html('<img style="max-height:80px;max-width=80px;" src="'+url+'" id="image'+id+'" style=/>');
+
+		$('#graphicalviewimageurl').modal('hide')
+	});
 </script>

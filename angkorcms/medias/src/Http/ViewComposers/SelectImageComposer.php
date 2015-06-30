@@ -20,8 +20,15 @@ class SelectImageComposer {
 
 		//Get the data
 		$folders = $this->folder_repository->getFullFolders();
+		$foldersroot = array();
+		foreach ($folders as $folder) {
+			if ($folder->folder_parent_id == null) {
+				$foldersroot[] = $folder;
+			}
+		}
+
 		$images = $this->image_repository->getListByFolder();
-		$data = array_merge(array('folders' => $folders), $images);
+		$data = array_merge($images, array('foldersroot' => $foldersroot, 'folders' => $folders));
 
 		// Agregate and Send the data to the view
 		$data = array_merge($data, $viewParameters);
