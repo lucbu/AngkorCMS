@@ -22,12 +22,10 @@ class MakerComposer {
 		$viewParameters = $view->getData();
 
 		//Get the data
-		$folders = $this->folderrepository->getFullFolders();
-		$imagesroot = $this->imagerepository->getListByFolder();
 		$content = $this->content_repository->getByModule($viewParameters['module_id']);
 
 		// Agregate and Send the data to the view
-		$data = array_merge(array('content' => $content), $folders, $imagesroot);
+		$data = array_merge(array('content' => $content));
 		$view->with($data);
 	}
 }

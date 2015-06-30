@@ -1,7 +1,7 @@
 <h3> Editing the content : </h3>
 <div class="form-group">
 	See image's url :
-	{!! View::make('angkorcms/medias/form/imagesUrl')->with(array('folders' => $folders, 'imagesroot' => $images, 'path' => false)) !!}
+	{!! View::make('angkorcms/medias/form/imagesUrl')->with(array('path' => false)) !!}
 </div>
 <div id="formContent">
 	<small class="text-danger"><div id='formAddSlideError'></div></small>

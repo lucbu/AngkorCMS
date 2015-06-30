@@ -7,8 +7,8 @@
 	@else
 		{!! Form::hidden('image_id', '', array('id' => 'image_id')) !!}
 	@endif
-	{!! View::make('angkorcms\medias\form\selectImage')->with(array('folders'=> $folders, 'object'=>$object, 'imagesroot' => $imagesroot)) !!}
+	{!! View::make('angkorcms\medias\form\selectImage') !!}
 @else
 	{!! Form::hidden('image_id', '', array('id' => 'image_id')) !!}
-	{!! View::make('angkorcms\medias\form\selectImage')->with(array('folders'=> $folders, 'imagesroot' => $imagesroot)) !!}
+	{!! View::make('angkorcms\medias\form\selectImage') !!}
 @endif

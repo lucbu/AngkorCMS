@@ -1,7 +1,5 @@
 <?php namespace AngkorCMS\MultiLanguages\Http\Controllers;
 
-use AngkorCMS\Medias\Repositories\Eloquent\AngkorCMSFolderRepository;
-use AngkorCMS\Medias\Repositories\Eloquent\AngkorCMSImageRepository;
 use AngkorCMS\MultiLanguages\Http\Controllers\AngkorCMSLangBaseController;
 use AngkorCMS\MultiLanguages\Http\Requests\AngkorCMSLangRequest;
 use AngkorCMS\MultiLanguages\Repositories\Eloquent\AngkorCMSLangRepository;
@@ -19,11 +17,8 @@ class AngkorCMSLangController extends AngkorCMSLangBaseController {
 		return view('angkorcms/multilanguages/index', array('langs' => $this->repository->all()));
 	}
 
-	public function create(AngkorCMSFolderRepository $folderrepository, AngkorCMSImageRepository $imagerepository) {
-		$folders = $folderrepository->getFullFolders();
-		$imagesroot = $imagerepository->getListByFolder();
-		$data = array_merge($folders, $imagesroot);
-		return view('angkorcms/multilanguages/create', $data);
+	public function create() {
+		return view('angkorcms/multilanguages/create');
 	}
 
 	public function store(AngkorCMSLangRequest $request) {
@@ -32,16 +27,14 @@ class AngkorCMSLangController extends AngkorCMSLangBaseController {
 			->with('info', 'The language has been created.');
 	}
 
-	public function edit($id, AngkorCMSFolderRepository $folderrepository, AngkorCMSImageRepository $imagerepository) {
-		$folders = $folderrepository->getFullFolders();
-		$imagesroot = $imagerepository->getListByFolder();
+	public function edit($id) {
 		$lang = $this->repository->show($id);
 
 		if (!$lang) {
 			return Redirect::route('angkorcmslang.index')->with('error', 'The language doesn\'t exist.');
 		}
 
-		$data = array_merge($folders, $imagesroot, $lang);
+		$data = array_merge($lang);
 		return view('angkorcms/multilanguages/edit', $data);
 	}
 

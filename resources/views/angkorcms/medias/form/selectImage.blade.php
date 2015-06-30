@@ -11,7 +11,7 @@
 		</optgroup>
 		@endforeach
 		<optgroup label="Root">
-			@foreach($imagesroot as $image)
+			@foreach($images as $image)
 				<option value='{{ $image->id }}' url="{{ $image->url() }}">
 					{{ $image->name }}
 				</option>

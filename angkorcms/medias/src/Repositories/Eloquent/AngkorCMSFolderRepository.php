@@ -47,7 +47,7 @@ class AngkorCMSFolderRepository implements AngkorCMSFolderRepositoryInterface {
 
 	public function getFullFolders() {
 		$folders = AngkorCMSFolder::with('images')->get();
-		return compact('folders');
+		return $folders;
 	}
 
 	public function getFullById($id) {

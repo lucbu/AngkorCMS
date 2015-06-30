@@ -1,7 +1,5 @@
 <?php namespace AngkorCMS\News\Http\Controllers;
 
-use AngkorCMS\Medias\Repositories\Eloquent\AngkorCMSFolderRepository;
-use AngkorCMS\Medias\Repositories\Eloquent\AngkorCMSImageRepository;
 use AngkorCMS\MultiLanguages\Repositories\Eloquent\AngkorCMSLangRepository;
 use AngkorCMS\News\Http\Requests\AngkorCMSPostRequest;
 use AngkorCMS\News\Http\Requests\AngkorCMSPostUpdateRequest;
@@ -29,12 +27,10 @@ class AngkorCMSPostController extends AngkorCMSNewsBaseController {
 		return view('angkorcms/news/read')->with($data);
 	}
 
-	public function create(AngkorCMSFolderRepository $folderrepository, AngkorCMSImageRepository $imagerepository, AngkorCMSLangRepository $lang_repository) {
-		$folders = $folderrepository->getFullFolders();
-		$imagesroot = $imagerepository->getListByFolder();
+	public function create(AngkorCMSLangRepository $lang_repository) {
 		$langs = $lang_repository->allLangsShort();
 
-		$data = array_merge($folders, $imagesroot, compact('langs'));
+		$data = array_merge(compact('langs'));
 
 		return view('angkorcms/news/add', $data);
 	}
@@ -44,14 +40,12 @@ class AngkorCMSPostController extends AngkorCMSNewsBaseController {
 		return Redirect::route('angkorcmsnews.show', [$id]);
 	}
 
-	public function edit($id, AngkorCMSFolderRepository $folderrepository, AngkorCMSImageRepository $imagerepository, AngkorCMSLangRepository $lang_repository) {
-		$folders = $folderrepository->getFullFolders();
-		$imagesroot = $imagerepository->getListByFolder();
+	public function edit($id, AngkorCMSLangRepository $lang_repository) {
 		$langs = $lang_repository->allLangsShort();
 
 		$post = $this->post_repository->getPost($id);
 
-		$data = array_merge(compact('post'), $folders, $imagesroot, compact('langs'));
+		$data = array_merge(compact('post'), compact('langs'));
 
 		return view('angkorcms/news/edit', $data);
 	}

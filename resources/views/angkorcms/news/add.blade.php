@@ -19,7 +19,7 @@
 					</div>
 					<div class="form-group">
 						See image's url :
-						{!! View::make('angkorcms/medias/form/imagesUrl')->with(array('folders' => $folders, 'imagesroot' => $images, 'path' => false)) !!}
+						{!! View::make('angkorcms\medias\form\imagesUrl')->with(array('path' => false)) !!}
 					</div>
 					<small class="text-danger">{{ $errors->first('content') }}</small>
 					<div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">

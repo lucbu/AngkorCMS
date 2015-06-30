@@ -21,7 +21,7 @@
 				Choose an image :
 				<small class="text-danger">{{ $errors->first('image_id') }}</small>
 				<div class="form-group {{ $errors->has('image_id') ? 'has-error has-feedback' : '' }}">
-					{!! View::make('angkorcms/medias/form/chooseOneImage')->with(array('folders' => $folders, 'object' => $lang, 'imagesroot' => $images)) !!}
+					{!! View::make('angkorcms/medias/form/chooseOneImage')->with(array('object' => $lang)) !!}
 				</div>
 				{!! Form::submit('Edit', array('class' => 'btn btn-primary pull-right')) !!}
 				{!! Form::close() !!}
@@ -32,6 +32,5 @@
 @stop
 
 @section('script')
-<!-- Scripts -->
-{!! View::make('angkorcms/medias/form/scriptChooseOneImage')->with('image_id', $lang->image_id) !!}
+	{!! View::make('angkorcms/medias/form/scriptChooseOneImage')->with('image_id', $lang->image_id) !!}
 @stop

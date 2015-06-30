@@ -15,7 +15,7 @@
 		</optgroup>
 		@endforeach
 		<optgroup label="Root">
-			@foreach($imagesroot as $image)
+			@foreach($images as $image)
 			@if(!isset($path) or $path == false)
 				<option value='{{ $image->id }}' url="{{ $image->url() }}">
 			@else
@@ -28,6 +28,6 @@
 	</select>
 </div>
 
-{!! View::make('angkorcms\medias\form\graphicalView')->with(array('folders' => $folders, 'images' => $imagesroot)) !!}
+{!! View::make('angkorcms\medias\form\graphicalView')->with(array('folders' => $foldersroot, 'images' => $images)) !!}
 
 <input class="form-control urlimage" type='text'  readonly value=""/>

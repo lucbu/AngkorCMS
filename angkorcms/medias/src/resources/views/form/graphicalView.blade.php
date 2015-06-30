@@ -1,15 +1,15 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#graphicalview">
-  Launch demo modal
+<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#graphicalviewimageurl">
+  Media Manager
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="graphicalview" tabindex="-1" role="dialog" aria-labelledby="graphicalviewLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+<div class="modal fade" id="graphicalviewimageurl" tabindex="-1" role="dialog" aria-labelledby="graphicalviewimageurlLabel">
+  <div class="modal-dialog"  style="width:90%;" role="document">
+    <div class="modal-content" >
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="graphicalviewLabel">Modal title</h4>
+        <h4 class="modal-title" id="graphicalviewimageurlLabel">Media manager</h4>
       </div>
       <div class="modal-body">
         <div class="col-sm-offset-1 col-sm-10">
@@ -56,9 +56,10 @@
 
         <!-- List of script -->
         {!! View::make('angkorcms\medias\script') !!}
+        {!! View::make('angkorcms\medias\form\modalscript') !!}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="graphicalview">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="graphicalviewimageurl">Close</button>
       </div>
     </div>
   </div>
