@@ -29,7 +29,7 @@ http://www.laravel.com
 + News system
 + Plugins (Interactive Maps, Slideshow, Text Content…) (Open to development)
 
-#Screenshots
+###Screenshots
 Check the screenshots [here](https://github.com/lucbu/AngkorCMS/wiki/Screenshots)
 
 ## Requirement
