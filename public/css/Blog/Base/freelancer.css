@@ -9,6 +9,7 @@
 
 body {
     overflow-x: hidden;
+    margin-top:110px;
 }
 
 p {
@@ -174,7 +175,7 @@ header .intro-text .skills {
 }
 
 section {
-    padding: 150px 0;
+    padding: 80px 0;
 }
 
 section h2 {
@@ -194,6 +195,16 @@ section.success a:active,
 section.success a.active {
     outline: 0;
     color: #2c3e50;
+}
+
+section .panel {
+    background-color: rgb(184,219,255);
+}
+section .panel-default {
+    border-color: #2c3e50;
+}
+section .panel-default > .panel-heading {
+    border-color: #2c3e50;
 }
 
 @media(max-width:767px) {
