@@ -94,12 +94,12 @@ class PageTableSeeder extends Seeder {
 		DB::table('angkorcms_pages')->insert(array(
 			'name' => 'Index',
 			'accessible' => 1,
-			'theme_id' => 1,
+			'theme_id' => 2,
 		));
 		DB::table('angkorcms_pages')->insert(array(
 			'name' => 'Users',
 			'accessible' => 1,
-			'theme_id' => 1,
+			'theme_id' => 2,
 		));
 	}
 }
