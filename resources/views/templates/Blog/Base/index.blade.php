@@ -50,7 +50,7 @@
     </header>
 
     <!-- About Section -->
-		{!! AngkorBlade::display($blocks['body'], $parameters, [["type" => "section", "id"=>true, "class"=>["", "success"]], ["type" => "div", "class"=>"container"]]) !!}
+		{!! AngkorBlade::display($blocks['body'], $parameters, [["type" => "section", "id"=>true, "class"=>["", "success"]], ["type" => "div", "class"=>"container"]], ['news-list-full' => true]) !!}
 
     <!-- Footer -->
     <footer class="text-center">

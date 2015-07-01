@@ -1,3 +1,6 @@
+
+<h1><a href="{{$parameters['url_base']}}">News</a></h1>
+
 {!! View::make('angkorcms/news/modules/post')->with(array('post' => $post, 'full' => $full, "parameters" => $parameters)) !!}
 <br>
 @if(count($post->comments_paginated)>0)

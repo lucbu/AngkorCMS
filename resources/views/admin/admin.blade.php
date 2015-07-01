@@ -77,6 +77,8 @@
 
 		@yield('content')
 
+		@yield('form')
+
 		@yield('script')
 	</body>
 </html>

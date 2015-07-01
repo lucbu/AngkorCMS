@@ -13,16 +13,13 @@
       </div>
       <div class="modal-body">
 
-        <div class="col-sm-offset-1 col-sm-10" id="listMedia">
+        <div class="" id="listMedia">
           {!! View::make('angkorcms\medias\listMedia')->with(array('folders' => $folders, 'images' => $images)) !!}
         </div>
 
         <!-- List of script -->
         {!! View::make('angkorcms\medias\script') !!}
         {!! View::make('angkorcms\medias\form\modalscript') !!}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="graphicalviewimageurl">Close</button>
       </div>
     </div>
   </div>

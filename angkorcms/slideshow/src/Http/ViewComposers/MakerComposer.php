@@ -23,11 +23,9 @@ class MakerComposer {
 
 		//Get the data
 		$slideshow = $this->slideshow_repository->getByModule($viewParameters['module_id']);
-		$folders = $this->folder_repository->getFullFolders();
-		$imagesroot = $this->image_repository->getListByFolder();
 
 		// Agregate and Send the data to the view
-		$data = array_merge(array('slideshow' => $slideshow), $folders, $imagesroot);
+		$data = array_merge(array('slideshow' => $slideshow), $viewParameters);
 		$view->with($data);
 	}
 }

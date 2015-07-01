@@ -72,7 +72,7 @@ class AngkorCMSBladeBuilder {
 			'attributes' => $attributes,
 		);
 
-		$html = $this->createView($attributes, $module, $data, $unique_id);
+		$html = $this->createView($attributes, $module, $data);
 
 		return $html;
 	}
@@ -86,12 +86,12 @@ class AngkorCMSBladeBuilder {
 			'attributes' => $attributes,
 		);
 
-		$html = $this->createView($attributes, $module, $data, $unique_id);
+		$html = $this->createView($attributes, $module, $data);
 
 		return $html;
 	}
 
-	public function createView($attributes, $module, $data, $unique_id) {
+	public function createView($attributes, $module, $data) {
 
 		$html = "\n";
 
@@ -108,7 +108,7 @@ class AngkorCMSBladeBuilder {
 				}
 			}
 		}
-		$html .= "<span id='blockmodule" . $unique_id . "'>\n";
+		$html .= "<span id='blockmodule" . $data['unique_id'] . "'>\n";
 		$html .= view($this->nature_view[$module->nature], $data)->render() . "\n";
 		$html .= "</span>\n";
 		if (count($attributes) > 0 && $this->nature_div[$module->nature]) {
@@ -126,7 +126,41 @@ class AngkorCMSBladeBuilder {
 		return $html;
 	}
 
-	protected function attributesFromArray($attributes, $module) {
+	public function createViewAsModule($view, $attributes, $data) {
+
+		$html = "\n";
+		if (count($attributes) > 0) {
+			$this->moduleNumber++;
+			foreach ($attributes as $attr) {
+				if (is_array($attr)) {
+					$stringAttr = $this->attributesFromArray($attr);
+					$tag = "div";
+					if (isset($attr["type"])) {
+						$tag = $attr["type"];
+					}
+					$html .= "<" . $tag . " " . $stringAttr . ">\n";
+				}
+			}
+		}
+		$html .= "<span id='blockmodule" . $data['unique_id'] . "'>\n";
+		$html .= view($view, $data)->render() . "\n";
+		$html .= "</span>\n";
+		if (count($attributes) > 0) {
+			foreach (array_reverse($attributes) as $attr) {
+				if (is_array($attr)) {
+					$tag = "div";
+					if (isset($attr["type"])) {
+						$tag = $attr["type"];
+					}
+					$html .= "</" . $tag . ">\n";
+				}
+			}
+		}
+
+		return $html;
+	}
+
+	protected function attributesFromArray($attributes, $module = null) {
 		$stringAttr = '';
 		foreach ($attributes as $key => $value) {
 			if ($key != "type") {
@@ -141,7 +175,7 @@ class AngkorCMSBladeBuilder {
 					}
 				}
 				if ($key == "id") {
-					if ($value === true) {
+					if ($value === true && !is_null($module)) {
 						$theValue = $module->title;
 					}
 				}

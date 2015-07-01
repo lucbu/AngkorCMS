@@ -16,7 +16,7 @@
 		Choose an image :
 		<small class="text-danger text-danger-image_id"></small>
 		<div class="form-group form-group-image_id">
-			{!! View::make('angkorcms/medias/form/chooseOneImage')->with(array('folders' => $folders, 'imagesroot' => $images)) !!}
+			{!! View::make('angkorcms/medias/form/chooseOneImage') !!}
 		</div>
 		Title :
 		<small class="text-danger text-danger-title"></small>
@@ -36,5 +36,8 @@
 		{!! Form::submit('Add slide', array('class' => 'btn btn-primary pull-right')) !!}
 	{!! Form::close() !!}
 </div>
+
+
+{!! View::make('angkorcms\medias\mediamanagerform') !!}
 
 {!! View::make('angkorcms/slideshow/makerScript')->with('image_id', 'null') !!}

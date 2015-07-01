@@ -34,6 +34,10 @@
 </div>
 @stop
 
+@section('form')
+	{!! View::make('angkorcms\medias\mediamanagerform') !!}
+@stop
+
 @section('script')
 <!-- Scripts -->
 {!! View::make('angkorcms/medias/form/scriptChooseOneImage')->with('image_id', 'null') !!}
