@@ -1,5 +1,5 @@
 @if(isset($tag))
-	<div style="text-align:center"><h1>{{ Lang::get("angkorcmsnewsmodule.tag", ["tag" => $tag]) }}</h1></div>
+	<div style="text-align:center;padding-top:10px;"><h1>{{ Lang::get("angkorcmsnewsmodule.tag", ["tag" => $tag]) }}</h1></div>
 @endif
 
 @foreach($posts as $post)
