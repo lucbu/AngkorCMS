@@ -1,6 +1,8 @@
 <div class="{{ isset($attr['news-panel-class']) ? $attr['news-panel-class'] : 'panel panel-default' }}">
 	<div class="{{ isset($attr['news-panel-heading-class']) ? $attr['news-panel-heading-class'] : 'panel-heading' }}">
-		<h3 class="{{ isset($attr['news-panel-title-class']) ? $attr['news-panel-title-class'] : 'panel-title' }}"><a href="{{$parameters['url_base']}}/post/{{$post->slug}}">{{$post->title}}</a></h3>
+		<a href="{{$parameters['url_base']}}/post/{{$post->slug}}">
+		<h3 class="{{ isset($attr['news-panel-title-class']) ? $attr['news-panel-title-class'] : 'panel-title' }}">{{$post->title}}</h3>
+		</a>
 	</div>
 	<div class="{{ isset($attr['news-panel-body-class']) ? $attr['news-panel-body-class'] : 'panel-body' }}">
 		<div class="{{ isset($attr['news-post-class']) ? $attr['news-post-class'] : '' }}">
