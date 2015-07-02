@@ -1,5 +1,17 @@
 <?php
 
+Route::group(['middleware' => ['installation']], function () {
+	Route::get('install', ['as' => 'install', function () {
+		return view('install/install');
+	}]);
+	Route::post('create-env', ['as' => 'create-env', function () {
+		return view('install/create-env');
+	}]);
+	Route::get('install-db', ['as' => 'install-db', function () {
+		return view('install/install-db');
+	}]);
+});
+
 Route::get('/hello/{macroute?}', ['middleware' => ['auth', 'admin'], function ($macroute = 'bla') {
 	return view('test', ['user' => $macroute]);
 }]);
