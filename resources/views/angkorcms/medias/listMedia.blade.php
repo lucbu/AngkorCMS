@@ -12,11 +12,20 @@
 		<ol class="breadcrumb" id='arborescence'>
 			@if(isset($folder))
 				<li class="active">{{$folder->name}}</li>
-				@while(($folder = $folder->folderParent) != null)
+				@while($folder->folderParent != null)
+					<?php $folder = $folder->folderParent;?>
 					<li><a href="javascript:void(0);" onclick="openFolder({{$folder->id}});" folder-id="{{$folder->id}}" ondrop="dropOnFolder(event, {{$folder->id}})" ondragover="allowDrop(event)">{{$folder->name}}</a></li>
 				@endwhile
 			@endif
-			<li><a href="javascript:void(0);" onclick="openFolder(null);" ondrop="dropOnFolder(event, '')" ondragover="allowDrop(event)">Root</a></li>
+			<li>
+				@if(isset($folder))
+				<a href="javascript:void(0);" onclick="openFolder(null);" ondrop="dropOnFolder(event, '')" ondragover="allowDrop(event)">
+					Root
+				</a>
+				@else
+					Root
+				@endif
+			</li>
 		</ol>
 		@if(isset($folders))
 		@foreach($folders as $folder)
