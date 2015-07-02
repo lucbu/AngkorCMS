@@ -1,6 +1,7 @@
 <?php namespace App\Http\Middleware;
 
 use Closure;
+use DB;
 
 class IsInstallationPhase {
 
@@ -9,7 +10,18 @@ class IsInstallationPhase {
 
 	public function handle($request, Closure $next) {
 
-		return $next($request);
+		$r = false;
+
+		try {
+			DB::table('migrations')->count();
+			$r = true;
+		} catch (\Illuminate\Database\QueryException $e) {
+
+		}
+
+		if (!$r) {
+			return $next($request);
+		}
 
 		return $this->error($request);
 	}
@@ -18,7 +30,7 @@ class IsInstallationPhase {
 		if ($request->ajax()) {
 			return response('Unauthorized.', 401);
 		} else {
-			return redirect('/')->with('error', 'You should be logged in as an admin');
+			return redirect('/')->with('error', 'The installation has already been done');
 		}
 	}
 
