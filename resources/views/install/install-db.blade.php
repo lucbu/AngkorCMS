@@ -11,8 +11,8 @@ set_time_limit(30);
 if ($num == 0) {
 	echo 'AngkorCMS has been migrated in database :<br/>';
 } else if ($num == 1) {
-	echo 'Whoops something wrong happened :<br>';
-	echo '<div style="background-color:black;color:white;font-family:monospace;display:inline-block;padding:20px;">';
+	echo 'Whoops something wrong happened :<br>';?>(<a href="{{route('install')}}">Back to .env creation</a>)<br/><?php
+echo '<div style="background-color:black;color:white;font-family:monospace;display:inline-block;padding:20px;">';
 	foreach ($test as $key => $value) {
 		echo $value . '<br/>';
 	}

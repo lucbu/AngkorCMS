@@ -10,16 +10,16 @@ class IsInstallationPhase {
 
 	public function handle($request, Closure $next) {
 
-		$r = false;
+		$installationDone = false;
 
 		try {
 			DB::table('migrations')->count();
-			$r = true;
-		} catch (\Illuminate\Database\QueryException $e) {
+			$installationDone = true;
+		} catch (\Exception $e) {
 
 		}
 
-		if (!$r) {
+		if (!$installationDone) {
 			return $next($request);
 		}
 
