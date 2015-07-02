@@ -46,4 +46,9 @@ return [
 		'route' => 'angkorcmsnews.index',
 		'spanClass' => 'glyphicon glyphicon-comment',
 	],
+
+	'Links' => [
+		'route' => 'admin.index',
+		'spanClass' => 'glyphicon glyphicon-link',
+	],
 ];
