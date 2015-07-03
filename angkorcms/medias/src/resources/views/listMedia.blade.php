@@ -1,4 +1,5 @@
 <div class="panel panel-primary">
+		{!! Form::submit('Add Folder !', array('class' => 'btn btn-info pull-right', 'onclick' => 'getNameFolder();', 'form' => 'addFolder')) !!}
 
 	<div class="panel-heading">
 		@if(isset($folder))

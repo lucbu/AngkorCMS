@@ -3,7 +3,7 @@
 Route::group([
 	'namespace' => 'AngkorCMS\News\Http\Controllers',
 	'middleware' => Config::get('angkorcmsnews.middleware'),
-	'prefix' => Config::get('angkornews.prefix'),
+	'prefix' => Config::get('angkorcmsnews.prefix'),
 ], function () {
 	Route::resource('angkorcmsnews', 'AngkorCMSPostController');
 	Route::get('angkorcmsnews/tag/{tag}', ['uses' => 'AngkorCMSPostController@getTag', 'as' => 'angkorcmsnews.tag']);

@@ -62,6 +62,10 @@
 </div>
 @stop
 
+@section('form')
+	{!! View::make('angkorcms\medias\mediamanagerform') !!}
+@stop
+
 @section('script')
 	{!! View::make('angkorcms/medias/form/scriptImagesUrl') !!}
 @stop
