@@ -30,5 +30,10 @@ class AngkorCMSUsersInstallCommand extends Command {
 	 * Run the package migrations.
 	 */
 	public function handle() {
+		$migrations = $this->app->make('migration.repository');
+        //$migrations->createRepository();
+
+		$migrator = $this->app->make('migrator');
+		$migrator->run(__DIR__.'/../database/migrations/');
 	}
 }

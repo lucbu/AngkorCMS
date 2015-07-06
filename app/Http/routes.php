@@ -27,7 +27,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 	]);
 });
 
-Route::get('/testing', 'FrontController@test');
+Route::get('/testing', ['uses' => 'FrontController@test', 'middleware' => 'angkorcmspermissions:troll']);
 
 Route::group(['middleware' => ['angkorcmslanguage']], function () {
 	$languages = Config::get('angkorcmsmultilanguages.languages'); // A changer

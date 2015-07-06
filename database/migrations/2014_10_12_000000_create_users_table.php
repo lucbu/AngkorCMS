@@ -19,6 +19,10 @@ class CreateUsersTable extends Migration {
 			$table->string('password', 64);
 			$table->boolean('admin')->default(false);
 			$table->string('remember_token', 100)->nullable();
+			$table->integer('group_id')->unsigned()->nullable();
+			$table->foreign('group_id')->references('id')->on('angkorcms_groups')
+			->onDelete('cascade')
+			->onUpdate('cascade');
 		});
 	}
 

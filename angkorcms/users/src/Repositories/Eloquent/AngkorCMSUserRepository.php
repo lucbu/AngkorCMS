@@ -11,11 +11,20 @@ class AngkorCMSUserRepository implements AngkorCMSUserRepositoryInterface {
 		$user->name = Input::get('name');
 		$user->email = Input::get('email');
 		$user->admin = Input::get('admin') ? 1 : 0;
+		if(($group_id = Input::get('group_id')) == 0){
+			$group_id = null;
+		}
+		$user->group_id = $group_id;
 		$user->save();
 	}
 
 	public function index($n) {
 		return $users = User::paginate($n);
+	}
+
+	public function getByGroupId($group_id) {
+		$users = User::where('group_id', $group_id)->get();
+		return compact('users');
 	}
 
 	public function allUserShort() {

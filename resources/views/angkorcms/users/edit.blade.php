@@ -16,6 +16,10 @@
 					  <div class="form-group {{ $errors->has('email') ? 'has-error has-feedback' : '' }}">
 					  	{!! Form::email('email', $user->email, array('class' => 'form-control', 'placeholder' => 'Mail')) !!}
 					  </div>
+					  <small class="text-danger">{{ $errors->first('group_parent_id') }}</small>
+					  <div class="form-group {{ $errors->has('group_id') ? 'has-error has-feedback' : '' }}">
+                          {!! Form::select('group_id', ['' => 'Not in a group'] + $groups, $user->group_id) !!}
+					  </div>
 						<div class="checkbox">
 						  {!! Form::checkbox('admin', 1, $user->admin) !!}Admin
 						</div>

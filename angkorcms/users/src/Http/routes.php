@@ -6,4 +6,5 @@ Route::group([
 
 ], function () {
 	Route::resource('angkorcmsusers', 'AngkorCMSUsersController');
+	Route::resource('angkorcmsgroups', 'AngkorCMSGroupController');
 });

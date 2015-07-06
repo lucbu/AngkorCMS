@@ -22,7 +22,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password', "admin"];
+	protected $fillable = ['name', 'email', 'password', "admin", 'group_id'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -30,5 +30,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 	protected $hidden = ['password', 'remember_token'];
+
+	public function group() {
+		return $this->belongsTo('AngkorCMS\Users\AngkorCMSGroup', 'group_id', 'id')->with('parentRecursive');
+	}
 
 }

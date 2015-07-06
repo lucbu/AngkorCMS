@@ -1,9 +1,8 @@
 <?php namespace AngkorCMS\Users\Http\Requests;
 
 use App\Http\Requests\Request;
-use Route;
 
-class UserUpdateRequest extends Request {
+class GroupRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -21,9 +20,8 @@ class UserUpdateRequest extends Request {
 	 */
 	public function rules() {
 		return [
-			'name' => 'required|max:30|alpha|unique:users,name,' . Route::getCurrentRoute()->getParameter('angkorcmsusers'),
-			'email' => 'required|email|unique:users,email,' . Route::getCurrentRoute()->getParameter('angkorcmsusers'),
-			'group_id' => 'exists:angkorcms_groups,id',
+			'name' => 'required|max:30|alpha_dash|unique:angkorcms_groups,name,' . $this->segment(count($this->segments())),
+			'group_parent_id' => 'exists:angkorcms_groups,id',
 		];
 	}
 

@@ -3,6 +3,7 @@
 use AngkorCMS\Users\Http\Requests\UserRequest;
 use AngkorCMS\Users\Http\Requests\UserUpdateRequest;
 use AngkorCMS\Users\Repositories\Eloquent\AngkorCMSUserRepository;
+use AngkorCMS\Users\Repositories\Eloquent\AngkorCMSGroupRepository;
 use Redirect;
 
 class AngkorCMSUsersController extends AngkorCMSUsersBaseController {
@@ -13,13 +14,16 @@ class AngkorCMSUsersController extends AngkorCMSUsersBaseController {
 		$this->repository = $repository;
 	}
 
-	public function index() {
-		$data = array('users' => $this->repository->index(10));
+	public function index(AngkorCMSGroupRepository $group_repository) {
+		$groups = $group_repository->index();
+		$data = array('users' => $this->repository->index(10), 'groups' => $groups);
 		return view('angkorcms/users/index')->with($data);
 	}
 
-	public function create() {
-		return view('angkorcms/users/create');
+	public function create(AngkorCMSGroupRepository $group_repository) {
+		$groups = $group_repository->allGroupShort();
+		$data = array('groups' => $groups);
+		return view('angkorcms/users/create', $data);
 	}
 
 	public function store(UserRequest $request) {
@@ -33,15 +37,18 @@ class AngkorCMSUsersController extends AngkorCMSUsersBaseController {
 		if (is_null($user)) {
 			return Redirect::route('angkorcmsusers.index')->with('error', 'The user doesn\'t exist.');
 		}
-		return view('angkorcms/users/show', $user);
+		$data = array_merge($user, array('groups' => $groups));
+		return view('angkorcms/users/show', $data);
 	}
 
-	public function edit($id) {
+	public function edit($id, AngkorCMSGroupRepository $group_repository) {
 		$user = $this->repository->show($id);
+		$groups = $group_repository->allGroupShort();
 		if (is_null($user)) {
 			return Redirect::route('angkorcmsusers.index')->with('error', 'The user doesn\'t exist.');
 		}
-		return view('angkorcms/users/edit', $user);
+		$data = array_merge($user, array('groups' => $groups));
+		return view('angkorcms/users/edit', $data);
 	}
 
 	public function update(UserUpdateRequest $request, $id) {

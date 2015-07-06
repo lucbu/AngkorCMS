@@ -23,6 +23,7 @@ class UserRequest extends Request {
 			'name' => 'required|max:30|alpha|unique:users',
 			'email' => 'required|email|unique:users',
 			'password' => 'required|min:8|confirmed',
+			'group_id' => 'exists:angkorcms_groups,id',
 		];
 	}
 

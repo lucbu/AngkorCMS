@@ -27,6 +27,7 @@ class Kernel extends HttpKernel {
 		'admin' => 'App\Http\Middleware\AuthenticatedAsAdmin',
 		'angkorcmsajax' => 'AngkorCMS\Medias\Http\Middleware\AngkorCMSAjax',
 		'angkorcmslanguage' => 'AngkorCMS\MultiLanguages\Http\Middleware\AngkorCMSLanguage',
+		'angkorcmspermissions' => 'AngkorCMS\Users\Http\Middleware\AngkorCMSUserPermissions',
 		'auth' => 'App\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',

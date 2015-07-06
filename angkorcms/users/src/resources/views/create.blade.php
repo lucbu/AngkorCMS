@@ -23,6 +23,10 @@
 					  <div class="form-group">
 					  	{!! Form::password('password_confirmation', array('class' => 'form-control', 'placeholder' => 'Password confirmation')) !!}
 					  </div>
+					  <small class="text-danger">{{ $errors->first('group_id') }}</small>
+					  <div class="form-group {{ $errors->has('group_id') ? 'has-error has-feedback' : '' }}">
+                          {!! Form::select('group_id', ['' => 'Not in a group'] + $groups) !!}
+					  </div>
 						<div class="checkbox">
 						  {!! Form::checkbox('admin') !!}Admin
 						</div>

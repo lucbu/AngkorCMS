@@ -24,7 +24,7 @@ http://www.laravel.com
 **AngkorCMS** can manage:
 + Multi languages
 + Templates and themes
-+ Users management
++ Users management (With Group/Permissions)
 + Medias
 + News system
 + Plugins (Interactive Maps, Slideshow, Text Content…) (Open to development)
