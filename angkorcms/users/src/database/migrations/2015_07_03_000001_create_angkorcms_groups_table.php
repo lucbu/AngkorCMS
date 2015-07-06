@@ -17,10 +17,10 @@ class CreateAngkorcmsGroupsTable extends Migration {
 		});
 
 		Schema::table('angkorcms_groups', function ($table) {
-		$table->integer('group_parent_id')->unsigned()->nullable()->default('null');
-		$table->foreign('group_parent_id')->references('id')->on('angkorcms_groups')
-		->onDelete('SET NULL')
-		->onUpdate('SET NULL');
+			$table->integer('group_parent_id')->unsigned()->nullable();
+			$table->foreign('group_parent_id')->references('id')->on('angkorcms_groups')
+			->onDelete('SET NULL')
+			->onUpdate('SET NULL');
 		});
 
 		Schema::table('users', function ($table) {
