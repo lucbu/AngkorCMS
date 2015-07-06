@@ -16,6 +16,8 @@ class InstallAngkorCMSPluginsCommand extends Command {
 		$this->call('migrate:install', array());
 		$this->call('migrate', array());
 
+		$this->call('angkorcmsusers:install', array());
+		$this->info('Users Installed');
 		$this->call('angkorcmsmedias:install', array());
 		$this->info('Medias Installed');
 		$this->call('angkorcmsmultilanguages:install', array());

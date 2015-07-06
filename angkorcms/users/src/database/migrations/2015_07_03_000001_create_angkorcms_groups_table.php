@@ -23,8 +23,8 @@ class CreateAngkorcmsGroupsTable extends Migration {
 		Schema::table('users', function ($table) {
 			$table->integer('group_id')->unsigned()->nullable();
 			$table->foreign('group_id')->references('id')->on('angkorcms_groups')
-			->onDelete('cascade')
-			->onUpdate('cascade');
+			->onDelete('SET NULL')
+			->onUpdate('SET NULL');
 		});
 	}
 
