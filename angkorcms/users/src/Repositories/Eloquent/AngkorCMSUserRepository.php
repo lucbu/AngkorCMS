@@ -55,6 +55,9 @@ class AngkorCMSUserRepository implements AngkorCMSUserRepositoryInterface {
 		if (is_null($user)) {
 			return false;
 		}
+		if(Input::has('password') && Input::has('password_new')){
+			$user->password = Hash::make(Input::get('password_new'));
+		}
 		$this->save($user);
 		return $user;
 	}

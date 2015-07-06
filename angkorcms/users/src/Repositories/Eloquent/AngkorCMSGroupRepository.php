@@ -56,7 +56,7 @@ class AngkorCMSGroupRepository implements AngkorCMSGroupRepositoryInterface {
 		if (is_null($group)) {
 			return false;
 		}
-		$group->delete();
+		return $group->delete();
 	}
 
 }

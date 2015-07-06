@@ -29,9 +29,9 @@ class AngkorCMSUserPermissions {
     * @param  \Closure  $next
     * @return mixed
     */
-    public function handle($request, Closure $next, $groupName) {
+    public function handle($request, Closure $next, $groupName = '') {
         if (!$this->auth->guest()) {
-            if ($this->auth->user()->admin == 1) {
+            if ($this->auth->user()->admin == 1 || $groupName == '') {
                 //admin can access everything
                 return $next($request);
             }

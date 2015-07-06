@@ -46,6 +46,7 @@
 				<tr>
 					<th>#</th>
 					<th>Name</th>
+					<th>Parent</th>
 					<th>Show</th>
 					<th>Edit</th>
 					<th>Delete</th>
@@ -56,6 +57,7 @@
 				<tr>
 					<td>{{ $group->id }}</td>
 					<td class="text-primary"><strong><a href="{{ route('angkorcmsusers.show', array($user->id)) }}">{{ $group->name }}</a></strong></td>
+					<td>{{ is_null($group->parent) ? 'NULL' : $group->parent->name }}</td>
 					<td>{!! link_to_route('angkorcmsgroups.show', 'Show', array($group->id), array('class' => 'btn btn-success btn-block')) !!}</td>
 					<td>{!! link_to_route('angkorcmsgroups.edit', 'Edit', array($group->id), array('class' => 'btn btn-warning btn-block')) !!}</td>
 					<td>

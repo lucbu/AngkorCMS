@@ -30,16 +30,6 @@ class AngkorCMSGroup extends Model {
 		return $this->parent()->with('parentRecursive');
 	}
 
-	public function fullArborescence(){
-		$arborescence = array();
-		$current_group = $this;
-		while($current_group != null){
-			$arborescence[] = $current_group;
-			$current_group = $current_group->parent;
-		}
-		return $arborescence;
-	}
-
 	public function users() {
 		return $this->hasMany('App\User', 'group_id', 'id');
 	}

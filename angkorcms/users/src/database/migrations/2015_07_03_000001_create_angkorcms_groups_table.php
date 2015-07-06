@@ -16,8 +16,8 @@ class CreateAngkorcmsGroupsTable extends Migration {
 			$table->string('name');
 			$table->integer('group_parent_id')->unsigned()->nullable();
 			$table->foreign('group_parent_id')->references('id')->on('angkorcms_groups')
-			->onDelete('cascade')
-			->onUpdate('cascade');
+			->onDelete('SET NULL')
+			->onUpdate('SET NULL');
 		});
 	}
 

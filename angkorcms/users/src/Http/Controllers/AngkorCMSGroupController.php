@@ -24,7 +24,7 @@ class AngkorCMSGroupController extends AngkorCMSUsersBaseController {
 			->with('ok', 'L\'utilisateur a bien été créé.');
 	}
 
-	public function show($id, AngkorCMSUserRepository $user_repository) {
+	public function show($id) {
 		$group = $this->repository->show($id);
 		if (is_null($group)) {
 			return Redirect::route('angkorcmsgroups.index')->with('error', 'The user doesn\'t exist.');

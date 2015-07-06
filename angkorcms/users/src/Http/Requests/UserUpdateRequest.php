@@ -23,6 +23,7 @@ class UserUpdateRequest extends Request {
 		return [
 			'name' => 'required|max:30|alpha|unique:users,name,' . Route::getCurrentRoute()->getParameter('angkorcmsusers'),
 			'email' => 'required|email|unique:users,email,' . Route::getCurrentRoute()->getParameter('angkorcmsusers'),
+			'password_new' => 'min:8|confirmed',
 			'group_id' => 'exists:angkorcms_groups,id',
 		];
 	}
