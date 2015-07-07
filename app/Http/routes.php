@@ -1,5 +1,11 @@
 <?php
 
+Route::get('/hello/{macroute?}', ['middleware' => ['auth', 'admin'], function ($macroute = 'bla') {
+	return view('test', ['user' => $macroute]);
+}]);
+Route::get('/testing', ['uses' => 'FrontController@test', 'middleware' => 'angkorcmspermissions:troll']);
+
+##### Installation #####
 Route::group(['middleware' => ['installation']], function () {
 	Route::get('install', ['as' => 'install', function () {
 		return view('install/install');
@@ -12,23 +18,21 @@ Route::group(['middleware' => ['installation']], function () {
 	}]);
 });
 
-Route::get('/hello/{macroute?}', ['middleware' => ['auth', 'admin'], function ($macroute = 'bla') {
-	return view('test', ['user' => $macroute]);
-}]);
-
+##### Authentication routes #####
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+Route::post('authenticate', ['uses' => 'Auth\AuthController@authenticate', 'as' => 'authent']);
 
+##### Administration #####
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
 	Route::controller('/', 'AdminController', [
 		'getIndex' => 'admin.index',
 	]);
 });
 
-Route::get('/testing', ['uses' => 'FrontController@test', 'middleware' => 'angkorcmspermissions:troll']);
-
+##### CMS #####
 Route::group(['middleware' => ['angkorcmslanguage']], function () {
 	$languages = Config::get('angkorcmsmultilanguages.languages'); // A changer
 	$prefix = null;

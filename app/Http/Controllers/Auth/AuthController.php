@@ -4,6 +4,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Auth;
+use Input;
 
 class AuthController extends Controller {
 
@@ -33,6 +35,24 @@ class AuthController extends Controller {
 	public function __construct() {
 
 		$this->middleware('guest', ['except' => 'getLogout']);
+	}
+
+	/**
+	* Handle an authentication attempt.
+	*
+	* @return Response
+	*/
+	public function authenticate()
+	{
+		$login = Input::get('login');
+		$password = Input::get('password');
+		$remember = Input::has('remember') ? 1 : 0;
+
+		if (Auth::attempt(['email' => $login, 'password' => $password], $remember) || Auth::attempt(['name' => $login, 'password' => $password], $remember)) {
+			// Authentication passed...
+			//return 'Mort de rire';
+			return redirect()->intended('dashboard');
+		}
 	}
 
 }
