@@ -25,10 +25,7 @@ class AngkorCMSBladeBuilder {
 			$this->nature_view[$key] = $view;
 
 			$configDiv = $value . '.showDiv';
-			$div = true;
-			if (Config::has($configDiv)) {
-				$div = Config::get($configDiv);
-			}
+			$div = Config::has($configDiv) ? Config::get($configDiv) : true;
 			$this->nature_div[$key] = $div;
 		}
 
