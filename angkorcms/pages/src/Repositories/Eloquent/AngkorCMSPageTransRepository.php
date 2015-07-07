@@ -22,7 +22,7 @@ class AngkorCMSPageTransRepository implements AngkorCMSPageTransRepositoryInterf
 	}
 
 	public function getBySlug($slug) {
-		$page_trans = AngkorCMSPageTrans::with('page', 'page.theme', 'page.theme.template', 'blocks', 'blocks.block', 'blocks.modules', 'blocks.modules.module')
+		$page_trans = AngkorCMSPageTrans::with('page', 'page.theme', 'page.theme.template', 'blocks', 'blocks.block', 'blocks.modules', 'blocks.modules.module', 'blocks.modules.module.lang')
 			->where('slug', $slug)
 			->first();
 		return $page_trans;
