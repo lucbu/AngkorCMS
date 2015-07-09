@@ -95,7 +95,7 @@ php artisan angkorcms:install
 
 ### Automatic method
 
-Just go to the page '/install' and follow the instructions
+Just go to the page '/install' and follow the instructions (only work if debug mode is ON and if the connection to the database send back an error).
 
 
 ##Administration
