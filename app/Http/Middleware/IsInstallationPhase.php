@@ -19,7 +19,7 @@ class IsInstallationPhase {
 
 		}
 
-		if (!$installationDone) {
+		if (!$installationDone && env('APP_DEBUG')) {
 			return $next($request);
 		}
 

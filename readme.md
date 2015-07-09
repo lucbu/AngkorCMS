@@ -46,6 +46,8 @@ The Laravel framework has a few system requirements:
 
 ##Installation
 
+### Manual method
+
 Install the packages with composer :
 ```
 composer install
@@ -90,6 +92,11 @@ Then when the connection to database is operational you can install the tables a
 ```
 php artisan angkorcms:install
 ```
+
+### Automatic method
+
+Just go to the page '/install' and follow the instructions
+
 
 ##Administration
 The users infos to access back-end:
