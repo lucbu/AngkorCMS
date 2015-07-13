@@ -101,6 +101,11 @@ class PageTableSeeder extends Seeder {
 			'accessible' => 1,
 			'theme_id' => 2,
 		));
+		DB::table('angkorcms_pages')->insert(array(
+			'name' => 'News',
+			'accessible' => 1,
+			'theme_id' => 2,
+		));
 	}
 }
 
@@ -117,6 +122,12 @@ class PageTransTableSeeder extends Seeder {
 			'title' => 'Users',
 			'slug' => 'users',
 			'page_id' => 2,
+			'lang_id' => 1,
+		));
+		DB::table('angkorcms_pages_trans')->insert(array(
+			'title' => 'News',
+			'slug' => 'news',
+			'page_id' => 3,
 			'lang_id' => 1,
 		));
 	}
