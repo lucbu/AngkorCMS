@@ -75,6 +75,7 @@ class FrontController extends Controller {
 		}
 
 		$url_base = URL::to($slug);
+		$parameters['slug'] = $slug;
 		$parameters['url_base'] = $url_base;
 
 		$theme = $page_trans->page->theme;

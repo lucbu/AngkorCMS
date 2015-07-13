@@ -20,6 +20,7 @@ class AngkorCMSListItemRepository implements AngkorCMSListItemRepositoryInterfac
 		$listItem = AngkorCMSListItem::create(array(
 			'text' => Input::get('text'),
 			'url' => Input::get('url'),
+			'anchor' => Input::get('anchor'),
 			'list_id' => Input::get('list_id'),
 		));
 

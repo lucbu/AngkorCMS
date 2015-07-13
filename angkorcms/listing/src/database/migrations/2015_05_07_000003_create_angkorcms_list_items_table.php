@@ -11,6 +11,7 @@ class CreateAngkorcmsListItemsTable extends Migration {
 			$table->string('text');
 			$table->integer('position')->default(0);
 			$table->string('url');
+			$table->string('anchor');
 			$table->integer('list_id')->unsigned();
 			$table->foreign('list_id')->references('id')->on('angkorcms_lists')
 			->onDelete('cascade')

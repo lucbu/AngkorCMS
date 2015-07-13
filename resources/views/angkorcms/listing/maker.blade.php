@@ -18,10 +18,15 @@
 		<div class="form-group form-group-text">
 			{!! Form::text('text', null, array('class' => 'form-control', 'placeholder' => 'Text')) !!}
 		</div>
-		URL :
+        URL :
 		<small class="text-danger text-danger-url"></small>
 		<div class="form-group form-group-url">
 			{!! Form::text('url', null, array('class' => 'form-control', 'placeholder' => 'url')) !!}
+		</div>
+        Anchor : (don't set the #)
+		<small class="text-danger text-danger-anchor"></small>
+		<div class="form-group form-group-anchor">
+			{!! Form::text('anchor', null, array('class' => 'form-control', 'placeholder' => 'anchor')) !!}
 		</div>
 		{!! Form::submit('Add list item.', array('class' => 'btn btn-primary pull-right')) !!}
 	{!! Form::close() !!}

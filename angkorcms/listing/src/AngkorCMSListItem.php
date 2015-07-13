@@ -8,7 +8,7 @@ class AngkorCMSListItem extends Model {
 
 	public $timestamps = false;
 
-	protected $fillable = ['text', 'url', 'position', 'list_id'];
+	protected $fillable = ['text', 'url', 'anchor', 'position', 'list_id'];
 
 	public function listing() {
 		return $this->belongsTo('AngkorCMS\Listing\AngkorCMSList', 'list_id', 'id');
