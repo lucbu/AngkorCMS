@@ -20,7 +20,7 @@
 								<td>{{ $lang->code }}</td>
 								<td>{{ $lang->description }}</td>
 								<td>@if(isset($lang->image))
-								<img style="max-height:80px;max-width=80px;" src="{{$lang->image->url()}}" title="{{$lang->image->name}}" alt="{{$lang->image->name}}"/>
+								<img style="max-height:80px;max-width=80px;" src="{{$lang->image->url()}}" title="{{$lang->image->name}}" alt="{{$lang->code}}"/>
 								@endif</td>
 								<td>{!! link_to_route('angkorcmslang.edit', 'Edit', array($lang->id), array('class' => 'btn btn-warning btn-block')) !!}</td>
 								<td>
