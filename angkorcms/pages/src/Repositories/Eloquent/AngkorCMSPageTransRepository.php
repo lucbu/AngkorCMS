@@ -29,7 +29,7 @@ class AngkorCMSPageTransRepository implements AngkorCMSPageTransRepositoryInterf
 	}
 
 	public function getById($id) {
-		$page_trans = AngkorCMSPageTrans::with('page', 'blocks', 'blocks.block', 'blocks.modules', 'blocks.modules.module')->find($id);
+		$page_trans = AngkorCMSPageTrans::with('page', 'blocks', 'blocks.block', 'blocks.modules', 'blocks.modules.module', 'lang', 'lang.image')->find($id);
 		return $page_trans;
 	}
 

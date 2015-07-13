@@ -38,6 +38,7 @@ class FrontController extends Controller {
 	public function indexGeneral($slug, $parameters = array()) {
 		$page_trans = $this->page_trans_repository->getBySlug($slug);
 
+		$nextPath = '';
 		if ($page_trans == null) {
 			if (count($parameters) > 0) {
 				if (isset($parameters[0])) {
@@ -74,9 +75,14 @@ class FrontController extends Controller {
 			}
 		}
 
+		foreach ($parameters as $key => $value) {
+			$nextPath = '/' . $key . '/' . $value;
+		}
 		$url_base = URL::to($slug);
 		$parameters['slug'] = $slug;
 		$parameters['url_base'] = $url_base;
+		$parameters['parameters'] = $nextPath;
+		$parameters['end_url'] = $slug . $nextPath;
 
 		$theme = $page_trans->page->theme;
 		$template = $theme->template;

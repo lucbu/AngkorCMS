@@ -4,7 +4,8 @@
 <div class="col-sm-offset-1 col-sm-10">
 	<br>
 	<div class="panel panel-primary">
-		<div class="panel-heading">Editing a page translation (for page {{$page->name}})
+		<div class="panel-heading">Editing a page translation (for page {{$page->name}}) in {{$page_trans->lang->code}}
+		<img style="max-height:80px;max-width=80px;" src="{{$page_trans->lang->image->url()}}" title="{{$page_trans->lang->image->name}}" alt="{{$page_trans->lang->image->name}}"/>
 		</div>
 		<div class="panel-body">
 			<div class="col-sm-12">
