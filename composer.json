@@ -1,7 +1,7 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
-	"keywords": ["framework", "laravel"],
+	"name": "lucbu/AngkorCMS",
+	"description": "A CMS made with Laravel 5. Multilingual, Multi-themes, Add-ons...",
+	"keywords": ["cms", "laravel", "multilingual", "Add-ons", "Theme"],
 	"license": "MIT",
 	"type": "project",
 	"require": {
