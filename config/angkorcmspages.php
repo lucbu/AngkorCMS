@@ -8,5 +8,10 @@ return array(
 			'users' => 'users',
 			'news' 	=> 'news',
 		],
+		'fr' => [
+			'index' => 'accueil',
+			'users' => 'utilisateurs',
+			'news' 	=> 'actu',
+		],
 	],
 );

@@ -9,7 +9,7 @@ return array(
 	/*
 	 * List of languages used in application
 	 */
-	'default_language' => 'en',
+	'default_language' => 'fr',
 	
 	/*
 	 * What middleware is needed to access multilanguages manager
