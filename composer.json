@@ -1,5 +1,5 @@
 {
-	"name": "lucbu/AngkorCMS",
+	"name": "lucbu/angkor-cms",
 	"description": "A CMS made with Laravel 5. Multilingual, Multi-themes, Add-ons...",
 	"keywords": ["cms", "laravel", "multilingual", "Add-ons", "Theme"],
 	"license": "MIT",
