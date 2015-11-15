@@ -26,6 +26,11 @@ class LangTableSeeder extends Seeder {
 			'description' => 'English',
 			'image_id' => 1,
 		));
+		DB::table('angkorcms_langs')->insert(array(
+			'code' => 'fr',
+			'description' => 'Francais',
+			'image_id' => 2,
+		));
 	}
 }
 

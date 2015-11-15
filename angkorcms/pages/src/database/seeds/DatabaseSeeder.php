@@ -130,5 +130,24 @@ class PageTransTableSeeder extends Seeder {
 			'page_id' => 3,
 			'lang_id' => 1,
 		));
+		
+		DB::table('angkorcms_pages_trans')->insert(array(
+			'title' => 'Accueil',
+			'slug' => 'accueil',
+			'page_id' => 1,
+			'lang_id' => 2,
+		));
+		DB::table('angkorcms_pages_trans')->insert(array(
+			'title' => 'Utilisateurs',
+			'slug' => 'utilisateurs',
+			'page_id' => 2,
+			'lang_id' => 2,
+		));
+		DB::table('angkorcms_pages_trans')->insert(array(
+			'title' => 'Actu',
+			'slug' => 'actu',
+			'page_id' => 3,
+			'lang_id' => 2,
+		));
 	}
 }

@@ -36,5 +36,12 @@ class ImageTableSeeder extends Seeder {
 			'extension' => 'gif',
 			'folder_id' => 1,
 		));
+		DB::table('angkorcms_images')->insert(array(
+			'name' => 'fr.gif',
+			'path' => 'uploads/images',
+			'filename' => 'fr',
+			'extension' => 'gif',
+			'folder_id' => 1,
+		));
 	}
 }
