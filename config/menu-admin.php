@@ -47,8 +47,10 @@ return [
 		'spanClass' => 'glyphicon glyphicon-comment',
 	],
 
+	/*
 	'Links' => [
 		'route' => 'admin.index',
 		'spanClass' => 'glyphicon glyphicon-link',
 	],
+	*/
 ];
