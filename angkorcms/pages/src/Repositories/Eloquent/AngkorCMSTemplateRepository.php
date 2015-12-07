@@ -41,9 +41,9 @@ class AngkorCMSTemplateRepository implements AngkorCMSTemplateRepositoryInterfac
 		if ($template == null) {
 			return false;
 		}
-		$pathCss = "css\\" . $template->name;
-		$pathJs = "js\\" . $template->name;
-		$pathView = "..\\resources\\views\\templates\\" . $template->name;
+		$pathCss = "css/" . $template->name;
+		$pathJs = "js/" . $template->name;
+		$pathView = "../resources/views/templates/" . $template->name;
 		File::deleteDirectory($pathCss);
 		File::deleteDirectory($pathJs);
 		File::deleteDirectory($pathView);

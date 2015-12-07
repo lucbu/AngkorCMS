@@ -38,6 +38,6 @@
 </div>
 
 
-{!! View::make('angkorcms\medias\mediamanagerform') !!}
+{!! View::make('angkorcms/medias/mediamanagerform') !!}
 
 {!! View::make('angkorcms/slideshow/makerScript')->with('image_id', 'null') !!}

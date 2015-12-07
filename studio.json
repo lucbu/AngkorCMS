@@ -1,14 +1,13 @@
 {
     "packages": {
-        "angkorcms/slideshow": "angkorcms/slideshow",
         "AngkorCMS/Slideshow": "angkorcms/slideshow",
         "AngkorCMS/MultiLanguages": "angkorcms/multilanguages",
         "AngkorCMS/Medias": "angkorcms/medias",
         "AngkorCMS/Pages": "angkorcms/pages",
         "AngkorCMS/Listing": "angkorcms/listing",
-        "AngkorCMS/Content": "angkorcms\\content",
+        "AngkorCMS/Content": "angkorcms/content",
         "AngkorCMS/Maps": "angkorcms/maps",
-        "AngkorCMS/Users": "angkorcms\\users",
+        "AngkorCMS/Users": "angkorcms/users",
         "AngkorCMS/News": "angkorcms/news"
     }
 }

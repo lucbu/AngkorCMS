@@ -36,10 +36,10 @@ class InstallAngkorCMSPluginsCommand extends Command {
 		$this->call('angkorcmscontent:install', array());
 		$this->info('Contents Installed');
 
-		$this->call('db:seed', array('--class' => 'AngkorCMS\Users\Database\Seeds\DatabaseSeeder')); //User just seed
-		$this->call('db:seed', array('--class' => 'AngkorCMS\Medias\Database\Seeds\DatabaseSeeder'));
-		$this->call('db:seed', array('--class' => 'AngkorCMS\MultiLanguages\Database\Seeds\DatabaseSeeder'));
-		$this->call('db:seed', array('--class' => 'AngkorCMS\Pages\Database\Seeds\DatabaseSeeder'));
-		$this->call('db:seed', array('--class' => 'AngkorCMS\News\Database\Seeds\DatabaseSeeder'));
+		$this->call('db:seed', array('--class' => 'UsersDatabaseSeeder')); //User just seed
+		$this->call('db:seed', array('--class' => 'MediasDatabaseSeeder'));
+		$this->call('db:seed', array('--class' => 'LangsDatabaseSeeder'));
+		$this->call('db:seed', array('--class' => 'PagesDatabaseSeeder'));
+		$this->call('db:seed', array('--class' => 'NewsDatabaseSeeder'));
 	}
 }

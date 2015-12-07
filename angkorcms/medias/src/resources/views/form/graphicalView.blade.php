@@ -14,12 +14,12 @@
       <div class="modal-body">
 
         <div class="" id="listMedia">
-          {!! View::make('angkorcms\medias\listMedia')->with(array('folders' => $folders, 'images' => $images)) !!}
+          {!! View::make('angkorcms/medias/listMedia')->with(array('folders' => $folders, 'images' => $images)) !!}
         </div>
 
         <!-- List of script -->
-        {!! View::make('angkorcms\medias\script') !!}
-        {!! View::make('angkorcms\medias\form\modalscript') !!}
+        {!! View::make('angkorcms/medias/script') !!}
+        {!! View::make('angkorcms/medias/form/modalscript') !!}
       </div>
     </div>
   </div>

@@ -63,7 +63,7 @@
 @stop
 
 @section('form')
-	{!! View::make('angkorcms\medias\mediamanagerform') !!}
+	{!! View::make('angkorcms/medias/mediamanagerform') !!}
 @stop
 
 @section('script')

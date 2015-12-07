@@ -42,11 +42,11 @@
 		</div>
 
 		<div class="col-sm-offset-1 col-sm-10" id="listMedia">
-			{!! View::make('angkorcms\medias\listMedia')->with(array('folders' => $folders, 'images' => $images)) !!}
+			{!! View::make('angkorcms/medias/listMedia')->with(array('folders' => $folders, 'images' => $images)) !!}
 		</div>
-		{!! View::make('angkorcms\medias\mediamanagerform') !!}
+		{!! View::make('angkorcms/medias/mediamanagerform') !!}
 
 		<!-- List of script -->
-		{!! View::make('angkorcms\medias\script') !!}
+		{!! View::make('angkorcms/medias/script') !!}
 	</body>
 </html>

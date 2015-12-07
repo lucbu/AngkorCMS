@@ -33,9 +33,9 @@ class AngkorCMSThemeRepository implements AngkorCMSThemeRepositoryInterface {
 		$view = Input::file('view');
 		$script = Input::file('script');
 
-		$pathCss = "css\\" . $template_name . "\\" . $name . "\\";
-		$pathJs = "js\\" . $template_name . "\\" . $name . "\\";
-		$pathView = "..\\resources\\views\\templates\\" . $template_name . "\\" . $name . "\\";
+		$pathCss = "css/" . $template_name . "/" . $name . "/";
+		$pathJs = "js/" . $template_name . "/" . $name . "/";
+		$pathView = "../resources/views/templates/" . $template_name . "/" . $name . "/";
 
 		$styleExtension = $style->getClientOriginalExtension();
 		$viewExtension = $view->getClientOriginalExtension();
@@ -73,9 +73,9 @@ class AngkorCMSThemeRepository implements AngkorCMSThemeRepositoryInterface {
 
 		$template_name = $theme->template->name;
 		$name = $theme->name;
-		$pathCss = "css\\" . $template_name . "\\" . $name . "\\";
-		$pathJs = "js\\" . $template_name . "\\" . $name . "\\";
-		$pathView = "..\\resources\\views\\templates\\" . $template_name . "\\" . $name . "\\";
+		$pathCss = "css/" . $template_name . "/" . $name . "/";
+		$pathJs = "js/" . $template_name . "/" . $name . "/";
+		$pathView = "../resources/views/templates/" . $template_name . "/" . $name . "/";
 
 		$style = Input::get('style');
 		$view = Input::get('view');
@@ -107,9 +107,9 @@ class AngkorCMSThemeRepository implements AngkorCMSThemeRepositoryInterface {
 		if ($theme == null) {
 			return false;
 		}
-		$pathCss = "css\\" . $theme->template->name . "\\" . $theme->name;
-		$pathJs = "js\\" . $theme->template->name . "\\" . $theme->name;
-		$pathView = "..\\resources\\views\\templates\\" . $theme->template->name . "\\" . $theme->name;
+		$pathCss = "css/" . $theme->template->name . "/" . $theme->name;
+		$pathJs = "js/" . $theme->template->name . "/" . $theme->name;
+		$pathView = "../resources/views/templates/" . $theme->template->name . "/" . $theme->name;
 		File::deleteDirectory($pathCss);
 		File::deleteDirectory($pathJs);
 		File::deleteDirectory($pathView);

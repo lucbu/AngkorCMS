@@ -11,7 +11,6 @@ class AngkorCMSContentServiceProvider extends ServiceProvider {
 		$this->publishes([
 			__DIR__ . '/config/angkorcmscontent.php' => config_path('angkorcmscontent.php'),
 			__DIR__ . '/resources/views' => base_path('resources/views/angkorcms/content'),
-			__DIR__ . '/js' => base_path('public/js/angkorcmscontent'),
 		]);
 		include __DIR__ . '/Http/routes.php';
 

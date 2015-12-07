@@ -24,7 +24,7 @@
 					</div>
 					<div class="form-group">
 						See image's url :
-						{!! View::make('angkorcms\medias\form\imagesUrl')->with(array('path' => false)) !!}
+						{!! View::make('angkorcms/medias/form/imagesUrl')->with(array('path' => false)) !!}
 					</div>
 					<small class="text-danger">{{ $errors->first('content') }}</small>
 					<div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
@@ -52,7 +52,7 @@
 @stop
 
 @section('form')
-	{!! View::make('angkorcms\medias\mediamanagerform') !!}
+	{!! View::make('angkorcms/medias/mediamanagerform') !!}
 @stop
 
 @section('script')

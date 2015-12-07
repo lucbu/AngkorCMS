@@ -44,12 +44,12 @@ class AngkorCMSThemeController extends AngkorCMSPageBaseController {
 		}
 		$template_name = $theme->template->name;
 		$name = $theme->name;
-		$pathCss = "css\\" . $template_name . "\\" . $name . "\\";
-		$pathJs = "js\\" . $template_name . "\\" . $name . "\\";
-		$pathView = "..\\resources\\views\\templates\\" . $template_name . "\\" . $name . "\\";
-		$style = file_get_contents($pathCss . '\\' . $theme->style);
-		$view = file_get_contents($pathView . '\\' . $theme->view);
-		$script = file_get_contents($pathJs . '\\' . $theme->script);
+		$pathCss = "css/" . $template_name . "/" . $name . "/";
+		$pathJs = "js/" . $template_name . "/" . $name . "/";
+		$pathView = "../resources/views/templates/" . $template_name . "/" . $name . "/";
+		$style = file_get_contents($pathCss . '/' . $theme->style);
+		$view = file_get_contents($pathView . '/' . $theme->view);
+		$script = file_get_contents($pathJs . '/' . $theme->script);
 
 		$data = array("theme" => $theme, "style" => $style, "script" => $script, "view" => $view);
 

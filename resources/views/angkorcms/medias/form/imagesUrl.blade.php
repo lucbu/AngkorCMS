@@ -28,6 +28,6 @@
 	</select>
 </div>
 
-{!! View::make('angkorcms\medias\form\graphicalView')->with(array('folders' => $foldersroot, 'images' => $images)) !!}
+{!! View::make('angkorcms/medias/form/graphicalView')->with(array('folders' => $foldersroot, 'images' => $images)) !!}
 
 <input class="form-control urlimage" type='text'  readonly value=""/>

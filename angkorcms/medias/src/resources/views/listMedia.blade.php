@@ -30,7 +30,7 @@
 		</ol>
 		@if(isset($folders))
 		@foreach($folders as $folder)
-		{!! View::make('angkorcms\medias\folder')->with(array('folder' => $folder)) !!}
+		{!! View::make('angkorcms/medias/folder')->with(array('folder' => $folder)) !!}
 		@endforeach
 		@endif
 	</div>
@@ -39,7 +39,7 @@
 	<div class="panel-heading">Picture's list (you can drag and drop image to folder)</div>
 	<div class="panel-body" id='listImage'>
 		@foreach($images as $image)
-		{!! View::make('angkorcms\medias\image')->with(array('image' => $image)) !!}
+		{!! View::make('angkorcms/medias/image')->with(array('image' => $image)) !!}
 		@endforeach
 	</div>
 </div>

@@ -15,8 +15,8 @@ class AngkorCMSMediasServiceProvider extends ServiceProvider {
 			//__DIR__ . '/database/migrations' 	=> $this->app->databasePath().'/migrations',
 		]);
 		include __DIR__ . '/Http/routes.php';
-		View::composer('angkorcms\medias\form\selectImage', 'AngkorCMS\Medias\Http\ViewComposers\SelectImageComposer');
-		View::composer('angkorcms\medias\form\imagesUrl', 'AngkorCMS\Medias\Http\ViewComposers\ImagesUrlComposer');
+		View::composer('angkorcms/medias/form/selectImage', 'AngkorCMS\Medias\Http\ViewComposers\SelectImageComposer');
+		View::composer('angkorcms/medias/form/imagesUrl', 'AngkorCMS\Medias\Http\ViewComposers\ImagesUrlComposer');
 		View::composer('angkorcms/medias/form/selectImage', 'AngkorCMS\Medias\Http\ViewComposers\SelectImageComposer');
 		View::composer('angkorcms/medias/form/imagesUrl', 'AngkorCMS\Medias\Http\ViewComposers\ImagesUrlComposer');
 	}

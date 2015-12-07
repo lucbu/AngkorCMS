@@ -15,7 +15,7 @@
 	{!! Form::close() !!}
 </div>
 
-{!! View::make('angkorcms\medias\mediamanagerform') !!}
+{!! View::make('angkorcms/medias/mediamanagerform') !!}
 {!! View::make('angkorcms/medias/form/scriptImagesUrl') !!}
 
 <script type="text/javascript" src="{{ asset('/tinymce/tinymce.min.js') }}"></script>
