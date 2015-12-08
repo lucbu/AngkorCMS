@@ -1,8 +1,10 @@
 <?php
 
+/*
 Route::get('/hello/{macroute?}', ['middleware' => ['auth', 'admin'], function ($macroute = 'bla') {
 	return view('test', ['user' => $macroute]);
 }]);
+*/
 Route::get('/testing', ['uses' => 'FrontController@test', 'middleware' => 'angkorcmspermissions:troll']);
 
 ##### Installation #####

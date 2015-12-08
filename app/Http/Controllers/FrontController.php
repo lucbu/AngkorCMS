@@ -104,9 +104,9 @@ class FrontController extends Controller {
 		return view($view, $data);
 	}
 
-	public function test() {
+	/*public function test() {
 		return var_dump(Session::get('data'));
-	}
+	}*/
 
 	public function byDefault() {
 		return Redirect::to(Config::get("angkorcmspages.alias." . Session::get('language')->code . ".index"));

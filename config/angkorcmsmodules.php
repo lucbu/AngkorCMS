@@ -3,12 +3,12 @@
 return array(
 
 	/*
-	 * What middleware is needed to access the media manager
+	 * What middleware is needed to access the module manager
 	 */
 	'middleware' => ['auth', 'admin'],
 
 	/*
-	 * What prefix will be used to the url accessing the media manager
+	 * What prefix will be used to the url accessing the module manager
 	 */
 	'prefix' => '',
 
