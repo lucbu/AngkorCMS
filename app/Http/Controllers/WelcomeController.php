@@ -1,7 +1,5 @@
 <?php namespace App\Http\Controllers;
 
-use AngkorCMS\Slideshow\Slideshow;
-
 class WelcomeController extends Controller {
 
 	/*
@@ -30,7 +28,6 @@ class WelcomeController extends Controller {
 	 * @return Response
 	 */
 	public function index() {
-		return Slideshow::world();
 		return view('welcome');
 	}
 
